@@ -4,9 +4,9 @@
     <Weapon>
       <Id>
         <TypeId>WeaponDefinition</TypeId>
-        <SubtypeId>DronePod</SubtypeId>
+        <SubtypeId>DroneBay</SubtypeId>
       </Id>
-      <ProjectileAmmoData RateOfFire="1" ShootSoundName="WepShipGatlingShot" ShotsInBurst="1" />
+      <ProjectileAmmoData RateOfFire="120" ShootSoundName="WepShipGatlingShot" ShotsInBurst="10" />
       <ReleaseTimeAfterFire>0</ReleaseTimeAfterFire>
       <DeviateShotAngle>0</DeviateShotAngle>
       <MuzzleFlashLifeSpan>0</MuzzleFlashLifeSpan>
@@ -18,7 +18,7 @@
       <ReloadTime>0</ReloadTime>
     </Weapon>
   </Weapons>
-  <Blueprints>   
+ <!-- <Blueprints>   
    <Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
@@ -36,7 +36,7 @@
     </Blueprint>
   </Blueprints>
 
- <!-- Ammo -->
+
   <AmmoMagazines>
     <AmmoMagazine>
       <Id>
@@ -78,5 +78,5 @@
         <ProjectileTrailProbability>0</ProjectileTrailProbability>
       </ProjectileProperties>
     </Ammo>
-  </Ammos>
+  </Ammos>-->
 </Definitions>

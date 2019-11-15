@@ -91,7 +91,7 @@
     <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
       <Id>
         <TypeId>LargeMissileTurret</TypeId>
-        <SubtypeId>DronePod</SubtypeId>
+        <SubtypeId>DroneBay</SubtypeId>
       </Id>
       <DisplayName>Drone Launcher Bay</DisplayName>
       <Icon>Textures\GUI\Icons\Cubes\DroneBayIcon.dds</Icon>
@@ -101,6 +101,7 @@
       <ModelOffset x="0" y="0" z="0" />
       <Model>Models\Cubes\AncientDroneLaunchBay.mwm</Model>
       <UseModelIntersection>true</UseModelIntersection>
+	  <Center x="1" y="0" z="0" />
       <Components>
         <Component Subtype="SteelPlate" Count="30" />
         <Component Subtype="Construction" Count="10" />
@@ -128,7 +129,7 @@
       <EdgeType>Light</EdgeType>
       <EmissiveColorPreset>Extended</EmissiveColorPreset>
       <BuildTimeSeconds>30</BuildTimeSeconds>
-      <WeaponDefinitionId Subtype="DronePod" />
+      <WeaponDefinitionId Subtype="DroneBay" />
       <InventoryMaxVolume>0.384</InventoryMaxVolume>
       <MinElevationDegrees>0</MinElevationDegrees>
       <MaxElevationDegrees>0</MaxElevationDegrees>
