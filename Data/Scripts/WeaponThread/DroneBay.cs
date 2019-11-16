@@ -26,32 +26,32 @@ namespace WeaponThread
         WeaponId = "DroneBay", // name of weapon in terminal
         AmmoMagazineId = "Blank",
         Block = AimControl(trackTargets: true, turretAttached: false, turretController: false, primaryTracking: true, rotateRate: 0f, elevateRate: 0f, offset: Vector(x: 0, y: 0, z: 0), fixedOffset: false, debug: false),
-        DeviateShotAngle = 0f,
+        DeviateShotAngle = 70f,
         AimingTolerance = 180f,
-        EnergyCost = 0.5f,
+        EnergyCost = 0.005f,
         Hybrid = false, //projectile based weapon with energy cost
         EnergyPriority = 0, //  0 = Lowest shares power with shields, 1 = Medium shares power with thrusters and over powers shields, 2 = Highest Does not share power will use all available power until energy requirements met
         RotateBarrelAxis = 0,
         AimLeadingPrediction = Advanced,
         DelayCeaseFire = 0,
         GridWeaponCap = 2,// 0 = unlimited, the smallest weapon cap assigned to a subTypeId takes priority.
-        Ui = Display(rateOfFire: true, damageModifier: true, toggleGuidance: false, enableOverload: false),
+        Ui = Display(rateOfFire: true, damageModifier: true, toggleGuidance: false, enableOverload: true),
 
         Loading = new AmmoLoading
         {
-            RateOfFire = 180,
+            RateOfFire = 300,
             BarrelsPerShot = 1,
             TrajectilesPerBarrel = 1,
             SkipBarrels = 0,
             ReloadTime = 0,
             DelayUntilFire = 0,
-            HeatPerShot = 0, //heat generated per shot
+            HeatPerShot = 5, //heat generated per shot
             MaxHeat = 1800, //max heat before weapon enters cooldown (70% of max heat)
             Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
             HeatSinkRate = 1, //amount of heat lost per second
             DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
-            ShotsInBurst = 10,
-            DelayAfterBurst = 240, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+            ShotsInBurst = 25,
+            DelayAfterBurst = 1800, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
         },
     },
     Targeting = new TargetingDefinition
@@ -63,7 +63,7 @@ namespace WeaponThread
         MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
         TopTargets = 4, // 0 = unlimited, max number of top targets to randomize between.
         TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
-        StopTrackingSpeed = 99, // do not track target threats traveling faster than this speed
+        StopTrackingSpeed = 50, // do not track target threats traveling faster than this speed
     },
     DamageScales = new DamageScaleDefinition
     {
@@ -82,12 +82,12 @@ namespace WeaponThread
     },
     Ammo = new AmmoDefinition
     {
-        BaseDamage = 500f, 		// how much damage the projectile does
-        Mass = 50f,
+        BaseDamage = 6000f, 		// how much damage the projectile does
+        Mass = 0.05f,
         Health = 20,
         BackKickForce = 0f,
-        Shape = Options(shape: Sphere, diameter: 2.5), //defines the collision shape of projectile, defaults to visual Line Length
-        ObjectsHit = Options(maxObjectsHit: 10, countBlocks: false), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
+        Shape = Options(shape: Sphere, diameter: 0.3), //defines the collision shape of projectile, defaults to visual Line Length
+        ObjectsHit = Options(maxObjectsHit: 100, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
         Shrapnel = Options(baseDamage: 0, fragments: 0, maxTrajectory: 2600, noAudioVisual: true, noGuidance: true, shape: FullMoon),
 
         AreaEffect = new AreaDamage
@@ -113,9 +113,9 @@ namespace WeaponThread
             Guidance = Smart,
             TargetLossDegree = 180f,
             TargetLossTime = 0, // time until trajectile death,  Measured in ticks (6 = 100ms, 60 = 1 seconds, etc..).
-            AccelPerSec = 60f,
+            AccelPerSec = 100f,
             DesiredSpeed = 1000f,
-            MaxTrajectory = 15000f,
+            MaxTrajectory = 7500f,
             FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest and remain for a time (Measured in game ticks, 60 = 1 second)
             SpeedVariance = Random(start: 0, end: 0),
             RangeVariance = Random(start: 0, end: 0),
@@ -123,9 +123,9 @@ namespace WeaponThread
             {
                 Inaccuracy = 0f, // 0 = perfect, aim pos will be 0 - # meters from center, recalculates on miss.
                 Aggressiveness = 1f, // controls how responsive tracking is.
-                MaxLateralThrust = 0.3, // controls how sharp the trajectile may turn (1 is max value)
-                TrackingDelay = 1200, // Measured in line length units traveled.
-                MaxChaseTime = 9600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                MaxLateralThrust = 0.6, // controls how sharp the trajectile may turn (1 is max value)
+                TrackingDelay = 20, // Measured in line length units traveled. How far to delay tracking once fired.
+                MaxChaseTime = 1200, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
             },
             Mines = Options(detectRadius: 180, deCloakRadius: 200, fieldTime: 1800, cloak: true, persist: false),
@@ -143,7 +143,7 @@ namespace WeaponThread
                 Name = "ShipWelderArc",
                 Color = Color(red: 245, green: 200, blue: 66, alpha: .02f),//245, 200, 66
                 Offset = Vector(x: 0, y: 0, z: 0),
-                Extras = Options(loop: true, restart: false, distance: 1600, duration: 12, scale: 1f),
+                Extras = Options(loop: true, restart: false, distance: 5000, duration: 12, scale: 1f),
             },
             Hit = new Particle
             {
@@ -181,8 +181,8 @@ namespace WeaponThread
     {
         HardPoint = new AudioHardPointDefinition
         {
-            FiringSound = "",
-            FiringSoundPerShot = true,
+            FiringSound = "DroneBayHum",
+            FiringSoundPerShot = false,
             ReloadSound = "",
             NoAmmoSound = "",
             HardPointRotationSound = "",
