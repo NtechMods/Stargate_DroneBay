@@ -181,7 +181,7 @@ namespace WeaponThread
     {
         HardPoint = new AudioHardPointDefinition
         {
-            FiringSound = "DroneBayHum",
+            FiringSound = "",
             FiringSoundPerShot = false,
             ReloadSound = "",
             NoAmmoSound = "",
@@ -191,7 +191,7 @@ namespace WeaponThread
 
         Ammo = new AudioAmmoDefinition
         {
-            TravelSound = "",
+            TravelSound = "DroneBayHum",
             HitSound = "",
         }, // Don't edit below this line
     }, 
