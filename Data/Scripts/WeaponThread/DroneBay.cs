@@ -35,7 +35,7 @@ namespace WeaponThread
         AimLeadingPrediction = Advanced,
         DelayCeaseFire = 0,
         GridWeaponCap = 2,// 0 = unlimited, the smallest weapon cap assigned to a subTypeId takes priority.
-        Ui = Display(rateOfFire: true, damageModifier: true, toggleGuidance: false, enableOverload: true),
+        Ui = Display(rateOfFire: true, damageModifier: true, toggleGuidance: false, enableOverload: false),
 
         Loading = new AmmoLoading
         {
@@ -59,11 +59,11 @@ namespace WeaponThread
         Threats = Valid(Characters, Projectiles, Grids),
         SubSystems = Priority(Thrust, Utility, Offense, Power, Production, Any), //define block type targeting order
         ClosestFirst = true, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
-        MinimumDiameter = 0, // 0 = unlimited, Minimum radius of threat to engage.
+        MinimumDiameter = 1, // 0 = unlimited, Minimum radius of threat to engage.
         MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
         TopTargets = 4, // 0 = unlimited, max number of top targets to randomize between.
         TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
-        StopTrackingSpeed = 50, // do not track target threats traveling faster than this speed
+        StopTrackingSpeed = 70, // do not track target threats traveling faster than this speed
     },
     DamageScales = new DamageScaleDefinition
     {
@@ -82,12 +82,12 @@ namespace WeaponThread
     },
     Ammo = new AmmoDefinition
     {
-        BaseDamage = 6000f, 		// how much damage the projectile does
+        BaseDamage = 5000f, 		// how much damage the projectile does
         Mass = 0.05f,
-        Health = 20,
-        BackKickForce = 0f,
+        Health = 200,
+        BackKickForce = 1f,
         Shape = Options(shape: Sphere, diameter: 0.3), //defines the collision shape of projectile, defaults to visual Line Length
-        ObjectsHit = Options(maxObjectsHit: 100, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
+        ObjectsHit = Options(maxObjectsHit: 300, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
         Shrapnel = Options(baseDamage: 0, fragments: 0, maxTrajectory: 2600, noAudioVisual: true, noGuidance: true, shape: FullMoon),
 
         AreaEffect = new AreaDamage
@@ -133,7 +133,7 @@ namespace WeaponThread
     },
     Graphics = new GraphicDefinition
     {
-        ModelName = "\\Models\\Weapons\\Drone_Projectile.mwm", //\\Models\\Weapons\\Torpedo_Ammo_1st.mwm
+        ModelName = "\\Models\\Ammo\\Drone_Projectile.mwm", //\\Models\\Weapons\\Torpedo_Ammo_1st.mwm
         VisualProbability = 1f,
         ShieldHitDraw = true,
         Particles = new ParticleDefinition

@@ -18,7 +18,7 @@
       <ReloadTime>0</ReloadTime>
     </Weapon>
   </Weapons>
- <!-- <Blueprints>   
+<Blueprints>   
    <Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
@@ -78,5 +78,5 @@
         <ProjectileTrailProbability>0</ProjectileTrailProbability>
       </ProjectileProperties>
     </Ammo>
-  </Ammos>-->
+  </Ammos>
 </Definitions>

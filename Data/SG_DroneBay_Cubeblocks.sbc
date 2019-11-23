@@ -126,7 +126,7 @@
       <Icon>Textures\GUI\Icons\Cubes\DroneBayIcon.dds</Icon>
       <CubeSize>Large</CubeSize>
       <BlockTopology>TriangleMesh</BlockTopology>
-	  <Description>This module can fire 50 drones every minute, limited to 1 bay per grid.</Description>
+	  <Description>This module can fire 26 drones every minute, limited to 2 bays per grid.</Description>
       <Size x="5" y="5" z="2" />
       <ModelOffset x="0" y="0" z="0" />
       <Model>Models\Cubes\AncientDroneLaunchBay.mwm</Model>
@@ -154,7 +154,7 @@
         <Model BuildPercentUpperBound="0.66" File="Models\Cubes\AncientDroneLaunchBay_Constr1.mwm" />
       </BuildProgressModels>
       <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
-      <BlockPairName>DronePod</BlockPairName>
+      <BlockPairName>SGDronePod</BlockPairName>
       <Description>testing</Description>
       <EdgeType>Light</EdgeType>
       <EmissiveColorPreset>Extended</EmissiveColorPreset>
@@ -177,6 +177,16 @@
       <PCU>225</PCU>
     </Definition>    
   </CubeBlocks>
+
+   <BlockPositions>
+      <BlockPosition>
+      <Name>SGDronePod</Name>
+      <Position>
+        <X>9</X>
+        <Y>9</Y>
+      </Position>
+    </BlockPosition>
+ </BlockPositions>
   <BlueprintClassEntries>
    
     <Entry Class="LargeBlocks" BlueprintSubtypeId="DroneLaunchBay" />
