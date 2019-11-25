@@ -39,7 +39,7 @@ namespace WeaponThread
 
         Loading = new AmmoLoading
         {
-            RateOfFire = 300,
+            RateOfFire = 800,
             BarrelsPerShot = 1,
             TrajectilesPerBarrel = 1,
             SkipBarrels = 0,
@@ -51,7 +51,7 @@ namespace WeaponThread
             HeatSinkRate = 1, //amount of heat lost per second
             DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
             ShotsInBurst = 13,
-            DelayAfterBurst = 1800, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+            DelayAfterBurst = 1500, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
         },
     },
     Targeting = new TargetingDefinition
@@ -84,10 +84,10 @@ namespace WeaponThread
     {
         BaseDamage = 5000f, 		// how much damage the projectile does
         Mass = 0.05f,
-        Health = 200,
+        Health = 300,
         BackKickForce = 1f,
-        Shape = Options(shape: Sphere, diameter: 0.3), //defines the collision shape of projectile, defaults to visual Line Length
-        ObjectsHit = Options(maxObjectsHit: 300, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
+        Shape = Options(shape: Sphere, diameter: 0.5), //defines the collision shape of projectile, defaults to visual Line Length
+        ObjectsHit = Options(maxObjectsHit: 500, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
         Shrapnel = Options(baseDamage: 0, fragments: 0, maxTrajectory: 2600, noAudioVisual: true, noGuidance: true, shape: FullMoon),
 
         AreaEffect = new AreaDamage
