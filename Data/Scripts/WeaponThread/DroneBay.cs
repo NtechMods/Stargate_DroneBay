@@ -75,7 +75,7 @@ namespace WeaponThread
         Characters = -1f,
         Grids = Options(largeGridModifier: -1f, smallGridModifier: -1f),
         Armor = Options(armor: -1f, light: -1f, heavy: -1f, nonArmor: -1f),
-        Shields = Options(modifier: -1f, type: Kinetic), // Types: Kinetic, Energy, Emp or Bypass
+        Shields = Options(modifier: -1f, type: Kinetic), // Types: Heal, Kinetic, Energy, Emp or Bypass
 
         // ignoreOthers will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
         Custom = SubTypeIds(false),
@@ -84,10 +84,10 @@ namespace WeaponThread
     {
         BaseDamage = 5000f, 		// how much damage the projectile does
         Mass = 0.05f,
-        Health = 300,
+        Health = 900,
         BackKickForce = 1f,
         Shape = Options(shape: Sphere, diameter: 0.5), //defines the collision shape of projectile, defaults to visual Line Length
-        ObjectsHit = Options(maxObjectsHit: 500, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
+        ObjectsHit = Options(maxObjectsHit: 1500, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
         Shrapnel = Options(baseDamage: 0, fragments: 0, maxTrajectory: 2600, noAudioVisual: true, noGuidance: true, shape: FullMoon),
 
         AreaEffect = new AreaDamage
@@ -114,7 +114,7 @@ namespace WeaponThread
             TargetLossDegree = 180f,
             TargetLossTime = 0, // time until trajectile death,  Measured in ticks (6 = 100ms, 60 = 1 seconds, etc..).
             AccelPerSec = 100f,
-            DesiredSpeed = 1000f,
+            DesiredSpeed = 1200f,
             MaxTrajectory = 7500f,
             FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest and remain for a time (Measured in game ticks, 60 = 1 second)
             SpeedVariance = Random(start: 0, end: 0),
