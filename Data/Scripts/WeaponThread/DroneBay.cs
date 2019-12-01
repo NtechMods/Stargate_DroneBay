@@ -123,7 +123,7 @@ namespace WeaponThread
             {
                 Inaccuracy = 0f, // 0 = perfect, aim pos will be 0 - # meters from center, recalculates on miss.
                 Aggressiveness = 1f, // controls how responsive tracking is.
-                MaxLateralThrust = 0.5, // controls how sharp the trajectile may turn (1 is max value)
+                MaxLateralThrust = 0.5f, // controls how sharp the trajectile may turn (1 is max value)
                 TrackingDelay = 20, // Measured in line length units traveled. How far to delay tracking once fired.
                 MaxChaseTime = 1200, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
