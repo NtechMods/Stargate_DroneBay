@@ -112,7 +112,7 @@ namespace WeaponThread
         {
             Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
             TargetLossDegree = 180f,
-            TargetLossTime = 0, // time until trajectile death,  Measured in ticks (6 = 100ms, 60 = 1 seconds, etc..).
+            TargetLossTime = 3600, // time until trajectile death,  Measured in ticks (6 = 100ms, 60 = 1 seconds, etc..).
             AccelPerSec = 100f,
             DesiredSpeed = 1200f,
             MaxTrajectory = 7500f,
@@ -121,7 +121,7 @@ namespace WeaponThread
             RangeVariance = Random(start: 0, end: 0),
             Smarts = new Smarts
             {
-                Inaccuracy = 0f, // 0 = perfect, aim pos will be 0 - # meters from center, recalculates on miss.
+                Inaccuracy = 0.4f, // 0 = perfect, aim pos will be 0 - # meters from center, recalculates on miss.
                 Aggressiveness = 1f, // controls how responsive tracking is.
                 MaxLateralThrust = 0.5f, // controls how sharp the trajectile may turn (1 is max value)
                 TrackingDelay = 20, // Measured in line length units traveled. How far to delay tracking once fired.
