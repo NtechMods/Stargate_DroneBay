@@ -25,7 +25,7 @@
         <SubtypeId>Blank</SubtypeId>
       </Id>
       <DisplayName>Ancient Drone</DisplayName>
-      <Icon>Textures\GUI\Icons\ammo\DeURounds.dds</Icon>
+      <Icon>Textures\GUI\Icons\ammo\Drone.dds</Icon>
       <Prerequisites>
         <Item Amount="8" TypeId="Ingot" SubtypeId="Magnesium" />
 		<Item Amount="2" TypeId="Ingot" SubtypeId="Nickel" />

@@ -45,12 +45,12 @@ namespace WeaponThread
             SkipBarrels = 0,
             ReloadTime = 0,
             DelayUntilFire = 0,
-            HeatPerShot = 20, //heat generated per shot
+            HeatPerShot = 10, //heat generated per shot
             MaxHeat = 1800, //max heat before weapon enters cooldown (70% of max heat)
             Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
             HeatSinkRate = 1, //amount of heat lost per second
             DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
-            ShotsInBurst = 13,
+            ShotsInBurst = 26,
             DelayAfterBurst = 1500, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
         },
     },
@@ -84,11 +84,11 @@ namespace WeaponThread
     {
         BaseDamage = 5000f, 		// how much damage the projectile does
         Mass = 0.05f,
-        Health = 900,
+        Health = 900000,
         BackKickForce = 1f,
         Shape = Options(shape: Sphere, diameter: 0.5), //defines the collision shape of projectile, defaults to visual Line Length
-        ObjectsHit = Options(maxObjectsHit: 1500, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
-        Shrapnel = Options(baseDamage: 0, fragments: 0, maxTrajectory: 2600, noAudioVisual: true, noGuidance: true, shape: FullMoon),
+        ObjectsHit = Options(maxObjectsHit: 1500000, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
+        Shrapnel = Options(baseDamage: 0, fragments: 0, maxTrajectory: 5000, noAudioVisual: true, noGuidance: true, shape: FullMoon),
 
         AreaEffect = new AreaDamage
         {
@@ -113,8 +113,8 @@ namespace WeaponThread
             Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
             TargetLossDegree = 180f,
             TargetLossTime = 3600, // time until trajectile death,  Measured in ticks (6 = 100ms, 60 = 1 seconds, etc..).
-            AccelPerSec = 100f,
-            DesiredSpeed = 1200f,
+            AccelPerSec = 1000f,
+            DesiredSpeed = 7000f,
             MaxTrajectory = 7500f,
             FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest and remain for a time (Measured in game ticks, 60 = 1 second)
             SpeedVariance = Random(start: 0, end: 0),
