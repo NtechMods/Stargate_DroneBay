@@ -25,7 +25,7 @@ namespace WeaponThread
     {
         WeaponId = "DroneBay", // name of weapon in terminal
         AmmoMagazineId = "Blank",
-        Block = AimControl(trackTargets: true, turretAttached: false, turretController: false, primaryTracking: true, rotateRate: 0f, elevateRate: 0f, offset: Vector(x: 0, y: 0, z: 0), fixedOffset: false, debug: false),
+        Block = AimControl(trackTargets: true, turretAttached: false, turretController: false, primaryTracking: true, rotateRate: 0f, elevateRate: 0f, offset: Vector(x: 0, y: 0, z: 0), fixedOffset: false, inventorySize: 3.14f, debug: false),
         DeviateShotAngle = 70f,
         AimingTolerance = 180f,
         EnergyCost = 0.005f,
@@ -45,19 +45,19 @@ namespace WeaponThread
             SkipBarrels = 0,
             ReloadTime = 0,
             DelayUntilFire = 0,
-            HeatPerShot = 10, //heat generated per shot
+            HeatPerShot = 0, //heat generated per shot
             MaxHeat = 1800, //max heat before weapon enters cooldown (70% of max heat)
             Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
             HeatSinkRate = 1, //amount of heat lost per second
             DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
-            ShotsInBurst = 26,
-            DelayAfterBurst = 1500, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+            ShotsInBurst = 100,
+            DelayAfterBurst = 1200, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
         },
     },
     Targeting = new TargetingDefinition
     {
         Threats = Valid(Characters, Projectiles, Grids),
-        SubSystems = Priority(Thrust, Utility, Offense, Power, Production, Any), //define block type targeting order
+        SubSystems = Priority(Offense, Utility, Thrust, Power, Production, Any), //define block type targeting order
         ClosestFirst = true, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
         MinimumDiameter = 1, // 0 = unlimited, Minimum radius of threat to engage.
         MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
@@ -75,20 +75,20 @@ namespace WeaponThread
         Characters = -1f,
         Grids = Options(largeGridModifier: -1f, smallGridModifier: -1f),
         Armor = Options(armor: -1f, light: -1f, heavy: -1f, nonArmor: -1f),
-        Shields = Options(modifier: -1f, type: Kinetic), // Types: Heal, Kinetic, Energy, Emp or Bypass
+        Shields = Options(modifier: 0.2f, type: Bypass), // Types: Heal, Kinetic, Energy, Emp or Bypass
 
         // ignoreOthers will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
         Custom = SubTypeIds(false),
     },
     Ammo = new AmmoDefinition
     {
-        BaseDamage = 5000f, 		// how much damage the projectile does
+        BaseDamage = 1000f, 		// how much damage the projectile does
         Mass = 0.05f,
-        Health = 900000,
+        Health = 90000000,
         BackKickForce = 1f,
         Shape = Options(shape: Sphere, diameter: 0.5), //defines the collision shape of projectile, defaults to visual Line Length
-        ObjectsHit = Options(maxObjectsHit: 1500000, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
-        Shrapnel = Options(baseDamage: 0, fragments: 0, maxTrajectory: 5000, noAudioVisual: true, noGuidance: true, shape: FullMoon),
+        ObjectsHit = Options(maxObjectsHit: 1000000, countBlocks: true), // 0 = disabled, value determines max objects (and/or blocks) penetrated per hit
+        Shrapnel = Options(baseDamage: 0, fragments: 0, maxTrajectory: 100, noAudioVisual: true, noGuidance: true, shape: FullMoon),
 
         AreaEffect = new AreaDamage
         {
@@ -113,19 +113,19 @@ namespace WeaponThread
             Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
             TargetLossDegree = 180f,
             TargetLossTime = 3600, // time until trajectile death,  Measured in ticks (6 = 100ms, 60 = 1 seconds, etc..).
-            AccelPerSec = 1000f,
-            DesiredSpeed = 7000f,
+            AccelPerSec = 100f,
+            DesiredSpeed = 200f,
             MaxTrajectory = 7500f,
             FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest and remain for a time (Measured in game ticks, 60 = 1 second)
             SpeedVariance = Random(start: 0, end: 0),
             RangeVariance = Random(start: 0, end: 0),
             Smarts = new Smarts
             {
-                Inaccuracy = 0.4f, // 0 = perfect, aim pos will be 0 - # meters from center, recalculates on miss.
+                Inaccuracy = 10.4f, // 0 = perfect, aim pos will be 0 - # meters from center, recalculates on miss.
                 Aggressiveness = 1f, // controls how responsive tracking is.
-                MaxLateralThrust = 0.5f, // controls how sharp the trajectile may turn (1 is max value)
+                MaxLateralThrust = 0.1f, // controls how sharp the trajectile may turn (1 is max value)
                 TrackingDelay = 20, // Measured in line length units traveled. How far to delay tracking once fired.
-                MaxChaseTime = 1200, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
             },
             Mines = Options(detectRadius: 180, deCloakRadius: 200, fieldTime: 1800, cloak: true, persist: false),
@@ -142,7 +142,7 @@ namespace WeaponThread
             {
                 Name = "ShipWelderArc",
                 Color = Color(red: 245, green: 200, blue: 66, alpha: .02f),//245, 200, 66
-                Offset = Vector(x: 0, y: 0, z: 0),
+                Offset = Vector(x: 0, y: 0, z: 1),
                 Extras = Options(loop: true, restart: false, distance: 5000, duration: 12, scale: 1f),
             },
             Hit = new Particle
