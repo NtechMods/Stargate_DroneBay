@@ -17,17 +17,15 @@ namespace WeaponThread
 
         public override void LoadData()
         {
-            //Log.Init("weapon.log");
-            //Log.CleanLine($"Logging Started at: {DateTime.Now:MM-dd-yy_HH-mm-ss-fff}");
+            Log.Init($"{ModContext.ModName}Init.log");
             MyAPIGateway.Utilities.RegisterMessageHandler(7772, Handler);
             Init();
-            SendModMessage();
+            SendModMessage(true);
         }
 
         protected override void UnloadData()
         {
-            //Log.CleanLine($"Logging stopped at: {DateTime.Now:MM-dd-yy_HH-mm-ss-fff}");
-            //Log.Close();
+            Log.Close();
             MyAPIGateway.Utilities.UnregisterMessageHandler(7772, Handler);
             Array.Clear(Storage, 0, Storage.Length);
             Storage = null;
@@ -35,11 +33,13 @@ namespace WeaponThread
 
         void Handler(object o)
         {
-            if (o == null) SendModMessage();
+            if (o == null) SendModMessage(false);
         }
 
-        void SendModMessage()
+        void SendModMessage(bool sending)
         {
+            if (sending) Log.CleanLine($"Sending request to core");
+            else Log.CleanLine($"Receiving request from core");
             MyAPIGateway.Utilities.SendModMessage(7771, Storage);
         }
 
@@ -49,11 +49,16 @@ namespace WeaponThread
         {
             var weapons = new Weapons();
             WeaponDefinitions = weapons.ReturnDefs();
+            Log.CleanLine($"Found: {WeaponDefinitions.Length} weapon definitions");
             for (int i = 0; i < WeaponDefinitions.Length; i++)
+            {
+                Log.CleanLine($"Compiling: {WeaponDefinitions[i].HardPoint.WeaponId}");
                 WeaponDefinitions[i].ModPath = ModContext.ModPath;
+            }
             Storage = MyAPIGateway.Utilities.SerializeToBinary(WeaponDefinitions);
             Array.Clear(WeaponDefinitions, 0, WeaponDefinitions.Length);
             WeaponDefinitions = null;
+            Log.CleanLine($"Handing over control to Core and going to sleep");
         }
 
         public enum EventTriggers
@@ -149,6 +154,7 @@ namespace WeaponThread
             [ProtoMember(12)] internal int MinElevation;
             [ProtoMember(13)] internal bool PrimaryTracking;
             [ProtoMember(14)] internal float InventorySize;
+            [ProtoMember(15)] internal bool LockOnFocus;
         }
 
         [ProtoContract]
@@ -385,6 +391,7 @@ namespace WeaponThread
             [ProtoMember(4)] internal bool NoAudioVisual;
             [ProtoMember(5)] internal bool NoGuidance;
             [ProtoMember(6)] internal ShrapnelShape Shape;
+            [ProtoMember(7)] internal bool AreaEffect;
         }
 
         [ProtoContract]
@@ -512,6 +519,7 @@ namespace WeaponThread
             [ProtoMember(4)] internal string BarrelRotationSound;
             [ProtoMember(5)] internal string FiringSound;
             [ProtoMember(6)] internal bool FiringSoundPerShot;
+            [ProtoMember(7)] internal string PreFiringSound;
         }
 
         [ProtoContract]
@@ -571,6 +579,7 @@ namespace WeaponThread
 
             [ProtoMember(1)] internal float Modifier;
             [ProtoMember(2)] internal ShieldType Type;
+            [ProtoMember(3)] internal float BypassModifier;
         }
 
         [ProtoContract]
@@ -651,9 +660,13 @@ namespace WeaponThread
 
             public static void Close()
             {
-                if (GetInstance()._file == null) return;
-                GetInstance()._file.Flush();
-                GetInstance()._file.Close();
+                var instance = (GetInstance());
+                if (instance._file == null) return;
+                instance._file.Flush();
+                instance._file.Close();
+                instance._file.Dispose();
+                instance._file = null;
+                instance = null;
             }
         }
     }

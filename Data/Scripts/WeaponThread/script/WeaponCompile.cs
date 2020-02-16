@@ -68,7 +68,7 @@ namespace WeaponThread
             return new Session.ObjectsHit { MaxObjectsHit = maxObjectsHit, CountBlocks = countBlocks };
         }
 
-        internal Session.Shrapnel Options(float baseDamage, int fragments, float maxTrajectory, bool noAudioVisual, bool noGuidance, Session.Shrapnel.ShrapnelShape shape)
+        internal Session.Shrapnel Options(float baseDamage, int fragments, float maxTrajectory, bool noAudioVisual, bool noGuidance, Session.Shrapnel.ShrapnelShape shape, bool areaEffect = false)
         {
             return new Session.Shrapnel { BaseDamage = baseDamage, Fragments = fragments, MaxTrajectory = maxTrajectory, NoAudioVisual = noAudioVisual, NoGuidance = noGuidance, Shape = shape};
         }
@@ -88,9 +88,9 @@ namespace WeaponThread
             return new Session.OffsetEffect { MaxOffset = maxOffset, MinLength = minLength, MaxLength = maxLength};
         }
 
-        internal Session.ShieldDefinition Options(float modifier, ShieldType type)
+        internal Session.ShieldDefinition Options(float modifier, ShieldType type, float bypassModifier = -1f)
         {
-            return new Session.ShieldDefinition { Modifier = modifier, Type = type };
+            return new Session.ShieldDefinition { Modifier = modifier, Type = type , BypassModifier = bypassModifier };
         }
 
         internal Session.ShapeDefinition Options(Session.ShapeDefinition.Shapes shape, double diameter)
@@ -128,9 +128,9 @@ namespace WeaponThread
             return new Session.TracerBaseDefinition { Enable = enable, Length = length, Width = width, Color = color};
         }
 
-        internal Session.AimControlDefinition AimControl(bool trackTargets, bool turretAttached, bool turretController, float rotateRate, float elevateRate, Vector3D offset, bool primaryTracking = false, int minAzimuth = 0, int maxAzimuth = 0, int minElevation = 0, int maxElevation = 0, bool fixedOffset = false, float inventorySize = .384f, bool debug = false)
+        internal Session.AimControlDefinition AimControl(bool trackTargets, bool turretAttached, bool turretController, float rotateRate, float elevateRate, Vector3D offset, bool primaryTracking = false, int minAzimuth = 0, int maxAzimuth = 0, int minElevation = 0, int maxElevation = 0, bool fixedOffset = false, float inventorySize = .384f, bool debug = false, bool lockOnFocus = false)
         {
-            return new Session.AimControlDefinition { TrackTargets = trackTargets, TurretAttached = turretAttached, TurretController = turretController, RotateRate = rotateRate, ElevateRate = elevateRate, Offset = offset, Debug = debug, MinAzimuth = minAzimuth, MaxAzimuth = maxAzimuth, MinElevation = minElevation, MaxElevation = maxElevation, FixedOffset = fixedOffset, InventorySize = inventorySize, PrimaryTracking = primaryTracking };
+            return new Session.AimControlDefinition { TrackTargets = trackTargets, TurretAttached = turretAttached, TurretController = turretController, RotateRate = rotateRate, ElevateRate = elevateRate, Offset = offset, Debug = debug, MinAzimuth = minAzimuth, MaxAzimuth = maxAzimuth, MinElevation = minElevation, MaxElevation = maxElevation, FixedOffset = fixedOffset, InventorySize = inventorySize, PrimaryTracking = primaryTracking, LockOnFocus = lockOnFocus };
         }
 
         internal Session.UiDefinition Display(bool rateOfFire, bool damageModifier, bool toggleGuidance, bool enableOverload)
