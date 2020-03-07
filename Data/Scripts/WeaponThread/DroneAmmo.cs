@@ -185,7 +185,7 @@ namespace WeaponThread
                     {
                         Name = "",
                         ApplyToShield = true,
-                        ShrinkByDistance = true,
+                        ShrinkByDistance = false,
                         Color = Color(red: 10, green: 1, blue: 0, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
@@ -217,7 +217,7 @@ namespace WeaponThread
                         Material = "WeaponLaser",
                         DecayTime = 128,
                         Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
-                        Back = true,
+                        Back = false,
                         CustomWidth = 0,
                         UseWidthVariance = false,
                         UseColorFade = true,
