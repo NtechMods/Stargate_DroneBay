@@ -67,7 +67,7 @@ namespace WeaponThread
                     TurretAttached = false,
                     TurretController = false,
                     PrimaryTracking = true,
-                    LockOnFocus = true,
+                    LockOnFocus = false,
                 },
                 HardWare = new HardwareDef
                 {
@@ -78,7 +78,7 @@ namespace WeaponThread
                     MinElevation = 0,
                     MaxElevation = 0,
                     FixedOffset = false,
-                    InventorySize = 3.14f,
+                    InventorySize = 2.0f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                 },
                 Other = new OtherDef
@@ -87,11 +87,11 @@ namespace WeaponThread
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
                     MuzzleCheck = false,
-                    Debug = false,
+                    Debug = true,
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 800,
+                    RateOfFire = 400,
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
@@ -104,14 +104,14 @@ namespace WeaponThread
                     HeatSinkRate = 10, //amount of heat lost per second
                     DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
                     ShotsInBurst = 50,
-                    DelayAfterBurst = 1200, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    DelayAfterBurst = 240, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     FireFullBurst = true,
                 },
                 Audio = new HardPointAudioDef
                 {
-                    PreFiringSound = "",
-                    FiringSound = "DroneBayHum", // subtype name from sbc
-                    FiringSoundPerShot = true,
+                    PreFiringSound = "DroneBayHum",
+                    FiringSound = "", // subtype name from sbc 
+                    FiringSoundPerShot = false,
                     ReloadSound = "",
                     NoAmmoSound = "ArcWepShipGatlingNoAmmo",
                     HardPointRotationSound = "",
@@ -151,7 +151,8 @@ namespace WeaponThread
             },
 
             Ammos = new [] {
-                DroneType1
+                DroneType1,
+				DroneType2
             },
             //Animations = AdvancedAnimation,
             // Don't edit below this line

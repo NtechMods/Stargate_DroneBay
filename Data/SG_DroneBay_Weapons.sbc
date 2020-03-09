@@ -31,7 +31,7 @@
 		<Item Amount="2" TypeId="Ingot" SubtypeId="Nickel" />
 		<Item Amount="10" TypeId="Ingot" SubtypeId="Uranium" />
       </Prerequisites>
-      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="Blank" />
+      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="Dronemag" />
       <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
     </Blueprint>
   </Blueprints>
@@ -41,10 +41,10 @@
     <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
-        <SubtypeId>Blank</SubtypeId>
+        <SubtypeId>Dronemag</SubtypeId>
       </Id>
-      <DisplayName>Blank</DisplayName>
-      <Icon>Textures\GUI\Icons\component\BatteryComponent.dds</Icon>
+      <DisplayName>ZPM</DisplayName>
+      <Icon>Textures\GUI\Icons\ammo\Drone.dds</Icon>
       <Size>
         <X>0.25</X>
         <Y>0.2</Y>
@@ -52,7 +52,7 @@
       </Size>
       <Mass>1</Mass>
       <Volume>1</Volume>
-      <Model>Models\Components\PowerCellComponent.mwm</Model>
+      <Model>Models\Ammo\Drone_Projectile.mwm</Model>
       <Capacity>1</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
     </AmmoMagazine>
