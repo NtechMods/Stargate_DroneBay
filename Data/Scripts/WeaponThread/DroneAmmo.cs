@@ -19,7 +19,7 @@ namespace WeaponThread
             AmmoRound = "DroneType1",
             HybridRound = true, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.01f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 1000f,
+            BaseDamage = 1200f,
             Mass = 0.05f, // in kilograms
             Health = 100000000, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
@@ -146,7 +146,7 @@ namespace WeaponThread
                 {
                     Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 1f, // controls how responsive tracking is.
-                    MaxLateralThrust = 5.9f, // controls how sharp the trajectile may turn
+                    MaxLateralThrust = 10.9f, // controls how sharp the trajectile may turn
                     TrackingDelay = 20, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
@@ -245,7 +245,7 @@ namespace WeaponThread
             AmmoMagazine = "Energy",
             AmmoRound = "DroneType2",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.03f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            EnergyCost = 0.05f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 700f,
             Mass = 0.05f, // in kilograms
             Health = 100000000, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
