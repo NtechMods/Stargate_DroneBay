@@ -19,7 +19,7 @@ namespace WeaponThread
             AmmoRound = "DroneType1",
             HybridRound = true, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.01f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 1200f,
+            BaseDamage = 7200f,
             Mass = 0.05f, // in kilograms
             Health = 100000000, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
@@ -246,7 +246,7 @@ namespace WeaponThread
             AmmoRound = "DroneType2",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.05f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 700f,
+            BaseDamage = 5000f,
             Mass = 0.05f, // in kilograms
             Health = 100000000, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
