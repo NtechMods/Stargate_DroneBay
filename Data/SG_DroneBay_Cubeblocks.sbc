@@ -114,7 +114,21 @@
 
 	</Components>
 
+ <!--Block Groups -->
+    <BlockVariantGroups>
 
+        <!-- Shields -->
+
+        <BlockVariantGroup>
+            <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="DroneBayGroup" />
+            <Icon>Textures\GUI\Icons\Cubes\DroneBayIcon.dds</Icon>
+            <DisplayName>DisplayName_BlockGroup_DroneBay</DisplayName>
+            <Description>This module can fire 26 drones every minute, limited to 4 bays per grid.</Description>
+            <Blocks>
+                <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="DroneBay" />
+            </Blocks>
+        </BlockVariantGroup>
+	</BlockVariantGroups>
 
 	<CubeBlocks>
 		<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
@@ -126,21 +140,21 @@
 			<Icon>Textures\GUI\Icons\Cubes\DroneBayIcon.dds</Icon>
 			<CubeSize>Large</CubeSize>
 			<BlockTopology>TriangleMesh</BlockTopology>
-			<Description>This module can fire 26 drones every minute, limited to 2 bays per grid.</Description>
+			<Description>This module can fire 26 drones every minute, limited to 4 bays per grid.</Description>
 			<Size x="5" y="5" z="2" />
 			<ModelOffset x="0" y="0" z="0" />
 			<Model>Models\Cubes\AncientDroneLaunchBay.mwm</Model>
 			<UseModelIntersection>true</UseModelIntersection>
 			<Center x="2" y="2" z="1" />
 			<Components>
-				<Component Subtype="SteelPlate" Count="30" />
-				<Component Subtype="Construction" Count="10" />
+				<Component Subtype="SteelPlate" Count="300" />
+				<Component Subtype="Construction" Count="150" />
 				<Component Subtype="ZPM" Count="1" />
-				<Component Subtype="MetalGrid" Count="4" />
-				<Component Subtype="Motor" Count="8" />
+				<Component Subtype="MetalGrid" Count="40" />
+				<Component Subtype="Motor" Count="10" />
 				<Component Subtype="Computer" Count="300" />
-				<Component Subtype="Construction" Count="10" />
-				<Component Subtype="SteelPlate" Count="10" />
+				<Component Subtype="Construction" Count="100" />
+				<Component Subtype="SteelPlate" Count="1300" /> <!-- Armor layer -->
 			</Components>
 			<CriticalComponent Subtype="Computer" Index="0" />
 			<MountPoints>
@@ -153,7 +167,6 @@
 			<BuildProgressModels>
 				<Model BuildPercentUpperBound="0.66" File="Models\Cubes\AncientDroneLaunchBay_Constr1.mwm" />
 			</BuildProgressModels>
-			<OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
 			<BlockPairName>SGDronePod</BlockPairName>
 			<Description>testing</Description>
 			<EdgeType>Light</EdgeType>
@@ -183,7 +196,7 @@
 			<Name>SGDronePod</Name>
 			<Position>
 				<X>9</X>
-				<Y>9</Y>
+				<Y>10</Y>
 			</Position>
 		</BlockPosition>
 	</BlockPositions>
