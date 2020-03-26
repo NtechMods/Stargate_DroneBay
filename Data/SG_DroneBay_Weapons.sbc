@@ -13,37 +13,67 @@
       <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
       <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
       <AmmoMagazines>
-        <AmmoMagazine Subtype="Blank" />
+        <AmmoMagazine Subtype="Energy" />
+        <AmmoMagazine Subtype="DroneMag" />
       </AmmoMagazines>
       <ReloadTime>0</ReloadTime>
     </Weapon>
   </Weapons>
-<Blueprints>   
+  
+  <Blueprints>   
    <Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
-        <SubtypeId>Blank</SubtypeId>
+        <SubtypeId>DroneMag</SubtypeId>
       </Id>
       <DisplayName>Ancient Drone</DisplayName>
       <Icon>Textures\GUI\Icons\ammo\Drone.dds</Icon>
       <Prerequisites>
-        <Item Amount="8" TypeId="Ingot" SubtypeId="Magnesium" />
-		<Item Amount="2" TypeId="Ingot" SubtypeId="Nickel" />
-		<Item Amount="10" TypeId="Ingot" SubtypeId="Uranium" />
+        <Item Amount="6" TypeId="Ingot" SubtypeId="Platinum" />
+		<Item Amount="4" TypeId="Ingot" SubtypeId="Nickel" />
+		<Item Amount="1" TypeId="Ingot" SubtypeId="Gold" />
+		<Item Amount="2" TypeId="Ingot" SubtypeId="Silver" />
+		<Item Amount="4" TypeId="Ingot" SubtypeId="Cobalt" />
+		<Item Amount="5" TypeId="Ingot" SubtypeId="Silicon" />
       </Prerequisites>
-      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="Dronemag" />
+      <Result Amount="10" TypeId="AmmoMagazine" SubtypeId="DroneMag" />
+      <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+    </Blueprint>
+   <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>ZPM</SubtypeId>
+      </Id>
+      <DisplayName>Zero Point Module</DisplayName>
+      <Icon>Textures\GUI\Icons\ZPMComponent.dds</Icon>
+      <Prerequisites>
+        <Item Amount="600" TypeId="Ingot" SubtypeId="Platinum" />
+		<Item Amount="400" TypeId="Ingot" SubtypeId="Nickel" />
+		<Item Amount="1000" TypeId="Ingot" SubtypeId="Gold" />
+		<Item Amount="200" TypeId="Ingot" SubtypeId="Silver" />
+		<Item Amount="400" TypeId="Ingot" SubtypeId="Cobalt" />
+		<Item Amount="500" TypeId="Ingot" SubtypeId="Silicon" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Component" SubtypeId="ZPM" />
       <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
     </Blueprint>
   </Blueprints>
 
+  <BlueprintClassEntries>
+    <Entry Class="Ammo" BlueprintSubtypeId="DroneMag" />
+	<Entry Class="AmmoMagazine" BlueprintSubtypeId="DroneMag" />
+    <Entry Class="Components" BlueprintSubtypeId="DroneMag" />   
+    <Entry Class="Components" BlueprintSubtypeId="ZPM" />   
+    <Entry Class="LargeBlocks" BlueprintSubtypeId="DroneBay" />
+  </BlueprintClassEntries>
 
   <AmmoMagazines>
     <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
-        <SubtypeId>Dronemag</SubtypeId>
+        <SubtypeId>DroneMag</SubtypeId>
       </Id>
-      <DisplayName>ZPM</DisplayName>
+      <DisplayName>Drone</DisplayName>
       <Icon>Textures\GUI\Icons\ammo\Drone.dds</Icon>
       <Size>
         <X>0.25</X>
@@ -54,14 +84,14 @@
       <Volume>1</Volume>
       <Model>Models\Ammo\Drone_Projectile.mwm</Model>
       <Capacity>1</Capacity>
-      <AmmoDefinitionId Subtype="Blank" />
+      <AmmoDefinitionId Subtype="Energy" />
     </AmmoMagazine>
   </AmmoMagazines>
   <Ammos>
     <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
       <Id>
         <TypeId>AmmoDefinition</TypeId>
-        <SubtypeId>Blank</SubtypeId>
+        <SubtypeId>Energy</SubtypeId>
       </Id>
       <BasicProperties>
         <DesiredSpeed>0</DesiredSpeed>

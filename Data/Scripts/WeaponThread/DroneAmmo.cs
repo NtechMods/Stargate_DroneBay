@@ -15,13 +15,13 @@ namespace WeaponThread
     {
         private AmmoDef DroneType1 => new AmmoDef
         {
-            AmmoMagazine = "Dronemag",
+            AmmoMagazine = "DroneMag",
             AmmoRound = "DroneType1",
             HybridRound = true, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.01f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 7200f,
+            BaseDamage = 10000f,
             Mass = 0.05f, // in kilograms
-            Health = 100000000, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
+            Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
             HardPointUsable = true, // set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
 
@@ -246,7 +246,7 @@ namespace WeaponThread
             AmmoRound = "DroneType2",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.05f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 5000f,
+            BaseDamage = 7200f,
             Mass = 0.05f, // in kilograms
             Health = 100000000, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
@@ -417,7 +417,7 @@ namespace WeaponThread
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
+                            Loop = false,
                             Restart = false,
                             MaxDistance = 5000,
                             MaxDuration = 1,
