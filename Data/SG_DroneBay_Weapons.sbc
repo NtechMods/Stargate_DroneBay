@@ -73,7 +73,7 @@
         <TypeId>AmmoMagazine</TypeId>
         <SubtypeId>DroneMag</SubtypeId>
       </Id>
-      <DisplayName>Drone</DisplayName>
+      <DisplayName>Ancient Drone</DisplayName>
       <Icon>Textures\GUI\Icons\ammo\Drone.dds</Icon>
       <Size>
         <X>0.25</X>
