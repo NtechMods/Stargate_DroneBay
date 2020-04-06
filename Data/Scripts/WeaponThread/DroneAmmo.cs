@@ -28,7 +28,7 @@ namespace WeaponThread
             Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
             {
                 Shape = SphereShape,
-                Diameter = 1,
+                Diameter = 2,
             },
             ObjectsHit = new ObjectsHitDef
             {
