@@ -21,7 +21,7 @@ namespace WeaponThread
             EnergyCost = 0.01f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 10000f,
             Mass = 0.05f, // in kilograms
-            Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
+            Health = 10000, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
             HardPointUsable = true, // set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
 
@@ -33,7 +33,7 @@ namespace WeaponThread
             ObjectsHit = new ObjectsHitDef
             {
                 MaxObjectsHit = 1000000, // 0 = disabled
-                CountBlocks = true, // counts gridBlocks and not just entities hit
+                CountBlocks = false, // counts gridBlocks and not just entities hit
             },
 			Shrapnel = new ShrapnelDef
             {
@@ -134,7 +134,7 @@ namespace WeaponThread
             {
                 Guidance = Smart,
                 TargetLossDegree = 180f,
-                TargetLossTime = 3600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 300f,
                 DesiredSpeed = 300,
@@ -150,6 +150,7 @@ namespace WeaponThread
                     TrackingDelay = 20, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
+					MaxTargets = 20,
                 },
                 Mines = new MinesDef
                 {

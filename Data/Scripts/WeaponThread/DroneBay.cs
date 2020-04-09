@@ -33,13 +33,13 @@ namespace WeaponThread
             {
                 Threats = new[]
                 {
-                    Grids, Characters, Projectiles, Meteors, // threats percieved automatically without changing menu settings
+                    Grids, Meteors, // threats percieved automatically without changing menu settings
                 },
                 SubSystems = new[]
                 {
-                    Thrust, Utility, Offense, Power, Production, Any, // subsystems the gun targets
+                    Offense, Power, Thrust, Utility, Production, Any, // subsystems the gun targets
                 },
-                ClosestFirst = true, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
+                ClosestFirst = false, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 MinimumDiameter = 0, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
                 TopTargets = 4, // 0 = unlimited, max number of top targets to randomize between.
