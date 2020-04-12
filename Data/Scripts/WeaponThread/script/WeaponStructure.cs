@@ -66,9 +66,11 @@ namespace WeaponThread
                 [ProtoMember(6)] internal bool ClosestFirst;
                 [ProtoMember(7)] internal BlockTypes[] SubSystems;
                 [ProtoMember(8)] internal Threat[] Threats;
+                [ProtoMember(9)] internal float MaxTargetDistance;
             }
+            
 
-            [ProtoContract]
+           [ProtoContract]
             public struct AnimationDef
             {
                 [ProtoMember(1)] internal PartAnimationSetDef[] WeaponAnimationSets;
@@ -193,6 +195,7 @@ namespace WeaponThread
                     [ProtoMember(13)] internal bool DegradeRof;
                     [ProtoMember(14)] internal int BarrelSpinRate;
                     [ProtoMember(15)] internal bool FireFullBurst;
+                    [ProtoMember(16)] internal bool GiveUpAfterBurst;
                 }
 
 
@@ -251,6 +254,7 @@ namespace WeaponThread
                     [ProtoMember(4)] internal bool MuzzleCheck;
                     [ProtoMember(5)] internal bool Debug;
                 }
+
                 [ProtoContract]
                 public struct HardPointParticleDef
                 {
@@ -280,6 +284,8 @@ namespace WeaponThread
                 [ProtoMember(16)] internal GraphicDef AmmoGraphics;
                 [ProtoMember(17)] internal AmmoAudioDef AmmoAudio;
                 [ProtoMember(18)] internal bool HardPointUsable;
+                [ProtoMember(19)] internal AmmoPatternDef Pattern;
+                [ProtoMember(20)] internal int EnergyMagazineSize;
 
                 [ProtoContract]
                 public struct DamageScaleDef
@@ -293,6 +299,14 @@ namespace WeaponThread
                     [ProtoMember(6)] internal ArmorDef Armor;
                     [ProtoMember(7)] internal CustomScalesDef Custom;
                     [ProtoMember(8)] internal ShieldDef Shields;
+                    [ProtoMember(9)] internal FallOffDef FallOff;
+
+                    [ProtoContract]
+                    public struct FallOffDef
+                    {
+                        [ProtoMember(1)] internal float Distance;
+                        [ProtoMember(2)] internal float MinMultipler;
+                    }
 
                     [ProtoContract]
                     public struct GridSizeDef
@@ -404,6 +418,8 @@ namespace WeaponThread
                             [ProtoMember(2)] internal float Length;
                             [ProtoMember(3)] internal float Width;
                             [ProtoMember(4)] internal Vector4 Color;
+                            [ProtoMember(5)] internal uint VisualFadeStart;
+                            [ProtoMember(6)] internal uint VisualFadeEnd;
                         }
 
                         [ProtoContract]
@@ -443,6 +459,17 @@ namespace WeaponThread
                     [ProtoMember(7)] internal bool RandomizeDir;
                 }
 
+                [ProtoContract]
+                public struct AmmoPatternDef
+                {
+                    [ProtoMember(1)] internal string[] Ammos;
+                    [ProtoMember(2)] internal bool Enable;
+                    [ProtoMember(3)] internal float TriggerChance;
+                    [ProtoMember(4)] internal bool SkipParent;
+                    [ProtoMember(5)] internal bool Random;
+                    [ProtoMember(6)] internal int RandomMin;
+                    [ProtoMember(7)] internal int RandomMax;
+                }
 
                 [ProtoContract]
                 public struct AreaDamageDef
@@ -460,6 +487,8 @@ namespace WeaponThread
                         OffenseField,
                         NavField,
                         DotField,
+                        PushField,
+                        PullField,
                     }
 
                     [ProtoMember(1)] internal double AreaEffectRadius;
@@ -546,7 +575,8 @@ namespace WeaponThread
                     [ProtoMember(10)] internal GuidanceType Guidance;
                     [ProtoMember(11)] internal SmartsDef Smarts;
                     [ProtoMember(12)] internal MinesDef Mines;
-
+                    [ProtoMember(13)] internal float GravityMultiplier;
+                    [ProtoMember(14)] internal uint MaxTrajectoryTime;
 
                     [ProtoContract]
                     public struct SmartsDef

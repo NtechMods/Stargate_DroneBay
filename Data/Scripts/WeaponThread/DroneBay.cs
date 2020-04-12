@@ -106,6 +106,7 @@ namespace WeaponThread
                     ShotsInBurst = 50,
                     DelayAfterBurst = 240, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     FireFullBurst = true,
+                    GiveUpAfterBurst = false,
                 },
                 Audio = new HardPointAudioDef
                 {
@@ -151,8 +152,7 @@ namespace WeaponThread
             },
 
             Ammos = new [] {
-                DroneType1,
-				DroneType2
+                DroneType1
             },
             //Animations = AdvancedAnimation,
             // Don't edit below this line
