@@ -13,47 +13,47 @@ namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
     {
-        private AmmoDef DroneType1 => new AmmoDef
+        private AmmoDef DronePhy => new AmmoDef
         {
             AmmoMagazine = "DroneMag",
-            AmmoRound = "DroneType1",
+            AmmoRound = "Drone Phy",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.01f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 100000f,
+            BaseDamage = 10000f,
             Mass = 0.05f, // in kilograms
-            Health = 10000, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
+            Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
             HardPointUsable = true, // set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
 
             Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
             {
-                Shape = SphereShape,
-                Diameter = 12,
+                Shape = LineShape, //SphereShape, LineShape
+                Diameter = 2,
             },
             ObjectsHit = new ObjectsHitDef
             {
-                MaxObjectsHit = 10, // 0 = disabled
+                MaxObjectsHit = 100000, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
 			Shrapnel = new ShrapnelDef
             {
-                AmmoRound = "",
-                Fragments = 12,
-                Degrees = 90,
+                AmmoRound = "DronePhy",
+                Fragments = 2,
+                Degrees = 10,
                 Reverse = false,
                 RandomizeDir = false,
             },
             Pattern = new AmmoPatternDef
             {
                 Ammos = new[] {
-                    "",
+                    "", // use other ammo types here, can spawn different ammos from primary
                 },
                 Enable = false,
-                TriggerChance = 1f,
-                Random = false,
+                TriggerChance = 1f, //percent of change chance
+                Random = false, //randomizes ammo
                 RandomMin = 1,
                 RandomMax = 1,
-                SkipParent = false,
+                SkipParent = false, //skips primary ammo
             },
             DamageScales = new DamageScaleDef
             {
@@ -76,8 +76,8 @@ namespace WeaponThread
                 Armor = new ArmorDef
                 {
                     Armor = -1f,
-                    Light = -1f,
-                    Heavy = -1f,
+                    Light = 0.9f,
+                    Heavy = 0.7f,
                     NonArmor = -1f,
                 },
                 Shields = new ShieldDef

@@ -49,7 +49,7 @@ namespace WeaponThread
             HardPoint = new HardPointDef
             {
                 WeaponName = "DroneBay", // name of weapon in terminal
-                DeviateShotAngle = 60f,
+                DeviateShotAngle = 40f,
                 AimingTolerance = 180f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -64,19 +64,19 @@ namespace WeaponThread
                 Ai = new AiDef
                 {
                     TrackTargets = true,
-                    TurretAttached = false,
-                    TurretController = false,
+                    TurretAttached = true,
+                    TurretController = true,
                     PrimaryTracking = true,
                     LockOnFocus = true,
                 },
                 HardWare = new HardwareDef
                 {
-                    RotateRate = 0.0f,
-                    ElevateRate = 0.0f,
-                    MinAzimuth = 0,
-                    MaxAzimuth = 0,
-                    MinElevation = 0,
-                    MaxElevation = 0,
+                    RotateRate = 0.02f,
+                    ElevateRate = 0.02f,
+                    MinAzimuth = -180,
+                    MaxAzimuth = 180,
+                    MinElevation = -180,
+                    MaxElevation = 180,
                     FixedOffset = false,
                     InventorySize = 2.0f,
                     Offset = Vector(x: 0, y: 0, z: 0),
@@ -98,7 +98,7 @@ namespace WeaponThread
                     SkipBarrels = 0,
                     ReloadTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 0, //heat generated per shot
+                    HeatPerShot = 2, //heat generated per shot
                     MaxHeat = 1000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
                     HeatSinkRate = 10, //amount of heat lost per second
@@ -110,8 +110,8 @@ namespace WeaponThread
                 },
                 Audio = new HardPointAudioDef
                 {
-                    PreFiringSound = "DroneBayHum",
-                    FiringSound = "", // subtype name from sbc 
+                    PreFiringSound = "",
+                    FiringSound = "DroneBayHum", // subtype name from sbc 
                     FiringSoundPerShot = false,
                     ReloadSound = "",
                     NoAmmoSound = "ArcWepShipGatlingNoAmmo",
@@ -152,7 +152,7 @@ namespace WeaponThread
             },
 
             Ammos = new [] {
-                DroneType1
+                DronePhy
             },
             //Animations = AdvancedAnimation,
             // Don't edit below this line
