@@ -17,7 +17,7 @@ namespace WeaponThread
         {
             AmmoMagazine = "DroneMag",
             AmmoRound = "Drone Phy",
-            HybridRound = false, //AmmoMagazine based weapon with energy cost
+            HybridRound = true, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.01f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 10000f,
             Mass = 0.05f, // in kilograms
@@ -37,7 +37,7 @@ namespace WeaponThread
             },
 			Shrapnel = new ShrapnelDef
             {
-                AmmoRound = "DroneShrapnel",
+                AmmoRound = "",
                 Fragments = 2,
                 Degrees = 10,
                 Reverse = false,
@@ -264,14 +264,14 @@ namespace WeaponThread
 		private AmmoDef DroneShrapnel => new AmmoDef
         {
             AmmoMagazine = "DroneMag",
-            AmmoRound = "DroneShrapnel",
+            AmmoRound = "DroneEnergy",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.01f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 10000f,
+            EnergyCost = 0.07f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            BaseDamage = 7500f,
             Mass = 0.05f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
-            HardPointUsable = false, // set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
+            HardPointUsable = true, // set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
 
             Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
             {
