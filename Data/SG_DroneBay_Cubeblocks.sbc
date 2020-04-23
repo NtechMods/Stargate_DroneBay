@@ -130,6 +130,18 @@
         </BlockVariantGroup>
 	</BlockVariantGroups>
 
+<!-- Research -->
+
+  <ResearchBlocks>
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="MyObjectBuilder_LargeMissileTurret" Subtype="DroneBay" />
+      <UnlockedByGroups>
+        <GroupSubtype>4</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+  </ResearchBlocks>
+
+<!-- Block Definitions -->
 	<CubeBlocks>
 		<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
 			<Id>
@@ -140,7 +152,7 @@
 			<Icon>Textures\GUI\Icons\Cubes\DroneBayIcon.dds</Icon>
 			<CubeSize>Large</CubeSize>
 			<BlockTopology>TriangleMesh</BlockTopology>
-			<Description>This module can fire 26 drones every minute, limited to 4 bays per grid.</Description>
+			<Description>This module fires 400 drones every minute, limited to 4 bays per grid.</Description>
 			<Size x="5" y="5" z="2" />
 			<ModelOffset x="0" y="0" z="0" />
 			<Model>Models\Cubes\AncientDroneLaunchBay.mwm</Model>
