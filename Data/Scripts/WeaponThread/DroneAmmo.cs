@@ -15,7 +15,7 @@ namespace WeaponThread
     {
         private AmmoDef DronePhy => new AmmoDef
         {
-            AmmoMagazine = "DroneMag",
+            AmmoMagazine = "Energy",
             AmmoRound = "Drone Phy",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.01f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
@@ -165,7 +165,7 @@ namespace WeaponThread
                     Inaccuracy = 0.01f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 1f, // controls how responsive tracking is.
                     MaxLateralThrust = 10.9f, // controls how sharp the trajectile may turn
-                    TrackingDelay = 1, // Measured in Shape diameter units traveled.
+                    TrackingDelay = 5, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
 					MaxTargets = 20,
