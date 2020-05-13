@@ -136,7 +136,7 @@
     <ResearchBlock xsi:type="ResearchBlock">
       <Id Type="MyObjectBuilder_LargeMissileTurret" Subtype="DroneBay" />
       <UnlockedByGroups>
-        <GroupSubtype>4</GroupSubtype>
+        <GroupSubtype>13</GroupSubtype>
       </UnlockedByGroups>
     </ResearchBlock>
   </ResearchBlocks>

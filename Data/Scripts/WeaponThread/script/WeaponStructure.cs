@@ -30,6 +30,7 @@ namespace WeaponThread
                     [ProtoMember(3)] internal string MuzzlePartId;
                     [ProtoMember(4)] internal string AzimuthPartId;
                     [ProtoMember(5)] internal string ElevationPartId;
+                    [ProtoMember(6)] internal string CameraPartId;
                 }
             }
 
@@ -67,15 +68,18 @@ namespace WeaponThread
                 [ProtoMember(7)] internal BlockTypes[] SubSystems;
                 [ProtoMember(8)] internal Threat[] Threats;
                 [ProtoMember(9)] internal float MaxTargetDistance;
+                [ProtoMember(10)] internal float MinTargetDistance;
+                [ProtoMember(11)] internal bool IgnoreDumbProjectiles;
+                [ProtoMember(12)] internal bool LockedSmartOnly;
             }
-            
 
-           [ProtoContract]
+            [ProtoContract(IgnoreListHandling = true)]
             public struct AnimationDef
             {
                 [ProtoMember(1)] internal PartAnimationSetDef[] WeaponAnimationSets;
                 [ProtoMember(2)] internal WeaponEmissive[] Emissives;
                 [ProtoMember(3)] internal string[] HeatingEmissiveParts;
+                [ProtoMember(4)] internal Dictionary<PartAnimationSetDef.EventTriggers, EventParticle[]> EventParticles;
 
 
                 [ProtoContract(IgnoreListHandling = true)]
@@ -119,6 +123,16 @@ namespace WeaponThread
                     [ProtoMember(4)] internal bool LeavePreviousOn;
                     [ProtoMember(5)] internal Vector4[] Colors;
                     [ProtoMember(6)] internal float[] IntensityRange;
+                }
+
+                [ProtoContract]
+                public struct EventParticle
+                {
+                    [ProtoMember(1)] internal string EmptyName;
+                    [ProtoMember(2)] internal ParticleDef Particle;
+                    [ProtoMember(4)] internal uint StartDelay;
+                    [ProtoMember(5)] internal uint LoopDelay;
+                    [ProtoMember(6)] internal bool ForceStop;
                 }
 
                 [ProtoContract]
@@ -176,6 +190,7 @@ namespace WeaponThread
                 [ProtoMember(10)] internal HardPointAudioDef Audio;
                 [ProtoMember(11)] internal HardPointParticleDef Graphics;
                 [ProtoMember(12)] internal OtherDef Other;
+                [ProtoMember(13)] internal bool AddToleranceToTracking;
 
                 [ProtoContract]
                 public struct LoadingDef
@@ -243,6 +258,7 @@ namespace WeaponThread
                     [ProtoMember(5)] internal string FiringSound;
                     [ProtoMember(6)] internal bool FiringSoundPerShot;
                     [ProtoMember(7)] internal string PreFiringSound;
+                    [ProtoMember(8)] internal uint FireSoundEndDelay;
                 }
 
                 [ProtoContract]
@@ -420,6 +436,22 @@ namespace WeaponThread
                             [ProtoMember(4)] internal Vector4 Color;
                             [ProtoMember(5)] internal uint VisualFadeStart;
                             [ProtoMember(6)] internal uint VisualFadeEnd;
+                            [ProtoMember(7)] internal SegmentDef Segmentation;
+
+                            [ProtoContract]
+                            public struct SegmentDef
+                            {
+                                [ProtoMember(1)] internal string Material;
+                                [ProtoMember(2)] internal double SegmentLength;
+                                [ProtoMember(3)] internal double SegmentGap;
+                                [ProtoMember(4)] internal double Speed;
+                                [ProtoMember(5)] internal Vector4 Color;
+                                [ProtoMember(6)] internal double WidthMultiplier;
+                                [ProtoMember(7)] internal bool Reverse;
+                                [ProtoMember(8)] internal bool UseLineVariance;
+                                [ProtoMember(9)] internal Randomize ColorVariance;
+                                [ProtoMember(10)] internal Randomize WidthVariance;
+                            }
                         }
 
                         [ProtoContract]
@@ -506,6 +538,10 @@ namespace WeaponThread
                     {
                         [ProtoMember(1)] internal int Interval;
                         [ProtoMember(2)] internal int PulseChance;
+                        [ProtoMember(3)] internal int GrowTime;
+                        [ProtoMember(4)] internal bool HideModel;
+                        [ProtoMember(5)] internal bool ShowParticle;
+                        [ProtoMember(6)] internal ParticleDef Particle;
                     }
 
                     [ProtoContract]
@@ -547,6 +583,10 @@ namespace WeaponThread
                     [ProtoMember(2)] internal string HitSound;
                     [ProtoMember(3)] internal float HitPlayChance;
                     [ProtoMember(4)] internal bool HitPlayShield;
+                    [ProtoMember(5)] internal string VoxelHitSound;
+                    [ProtoMember(6)] internal string PlayerHitSound;
+                    [ProtoMember(7)] internal string FloatingHitSound;
+                    [ProtoMember(8)] internal string ShieldHitSound;
                 }
 
                 [ProtoContract]
@@ -588,6 +628,8 @@ namespace WeaponThread
                         [ProtoMember(5)] internal int MaxChaseTime;
                         [ProtoMember(6)] internal bool OverideTarget;
                         [ProtoMember(7)] internal int MaxTargets;
+                        [ProtoMember(8)] internal bool NoTargetExpire;
+                        [ProtoMember(9)] internal bool Roam;
                     }
 
                     [ProtoContract]
@@ -614,7 +656,7 @@ namespace WeaponThread
             {
                 [ProtoMember(1)] internal float Scale;
                 [ProtoMember(2)] internal float MaxDistance;
-                [ProtoMember(3)] internal float MaxDuration;
+                [ProtoMember(3)] internal uint MaxDuration;
                 [ProtoMember(4)] internal bool Loop;
                 [ProtoMember(5)] internal bool Restart;
                 [ProtoMember(6)] internal float HitPlayChance;
