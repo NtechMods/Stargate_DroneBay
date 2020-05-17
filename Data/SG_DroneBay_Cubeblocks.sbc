@@ -123,7 +123,7 @@
             <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="DroneBayGroup" />
             <Icon>Textures\GUI\Icons\Cubes\DroneBayIcon.dds</Icon>
             <DisplayName>DisplayName_BlockGroup_DroneBay</DisplayName>
-            <Description>This module can fire 26 drones every minute, limited to 4 bays per grid.</Description>
+            <Description>This module can fire 400 drones every minute, Very devastating platform, uses both energy based drones, and physical drones which can be made in the assembler.</Description>
             <Blocks>
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="DroneBay" />
             </Blocks>
@@ -152,7 +152,7 @@
 			<Icon>Textures\GUI\Icons\Cubes\DroneBayIcon.dds</Icon>
 			<CubeSize>Large</CubeSize>
 			<BlockTopology>TriangleMesh</BlockTopology>
-			<Description>This module fires 400 drones every minute, limited to 4 bays per grid.</Description>
+			<Description>This module can fire 400 drones every minute, Very devastating platform, uses both energy based drones, and physical drones which can be made in the assembler.</Description>
 			<Size x="5" y="5" z="2" />
 			<ModelOffset x="0" y="0" z="0" />
 			<Model>Models\Cubes\AncientDroneLaunchBay.mwm</Model>
@@ -215,6 +215,7 @@
 	<BlueprintClassEntries>
 
 		<Entry Class="LargeBlocks" BlueprintSubtypeId="DroneLaunchBay" />
-		<Entry Class="Ammo" BlueprintSubtypeId="Blank" />
+		<Entry Class="Component" BlueprintSubtypeId="ZPM" />
+		<Entry Class="Ammo" BlueprintSubtypeId="DroneMag" />
 	</BlueprintClassEntries>
 </Definitions>

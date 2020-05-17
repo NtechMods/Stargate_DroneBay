@@ -42,15 +42,15 @@ namespace WeaponThread
                 ClosestFirst = false, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 MinimumDiameter = 0, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
-                TopTargets = 4, // 0 = unlimited, max number of top targets to randomize between.
-                TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
-                StopTrackingSpeed = 70, // do not track target threats traveling faster than this speed
+                TopTargets = 10, // 0 = unlimited, max number of top targets to randomize between.
+                TopBlocks = 10, // 0 = unlimited, max number of blocks to randomize between
+                StopTrackingSpeed = 90, // do not track target threats traveling faster than this speed
             },
             HardPoint = new HardPointDef
             {
                 WeaponName = "DroneBay", // name of weapon in terminal
-                DeviateShotAngle = 40f,
-                AimingTolerance = 180f, // 0 - 180 firing angle
+                DeviateShotAngle = 10f,
+                AimingTolerance = 10f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
 
@@ -75,15 +75,15 @@ namespace WeaponThread
                     ElevateRate = 0.02f,
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
-                    MinElevation = -180,
-                    MaxElevation = 180,
+                    MinElevation = -80,
+                    MaxElevation = 80,
                     FixedOffset = false,
                     InventorySize = 2.0f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                 },
                 Other = new OtherDef
                 {
-                    GridWeaponCap = 4,
+                    GridWeaponCap = 0,
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
                     MuzzleCheck = false,
@@ -94,11 +94,11 @@ namespace WeaponThread
                     RateOfFire = 400,
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
-                    TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
+                    TrajectilesPerBarrel = 2, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
                     ReloadTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 2, //heat generated per shot
+                    HeatPerShot = 4, //heat generated per shot
                     MaxHeat = 1000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
                     HeatSinkRate = 10, //amount of heat lost per second
@@ -106,7 +106,7 @@ namespace WeaponThread
                     ShotsInBurst = 50,
                     DelayAfterBurst = 240, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     FireFullBurst = true,
-                    GiveUpAfterBurst = false,
+                    GiveUpAfterBurst = true,
                 },
                 Audio = new HardPointAudioDef
                 {
@@ -152,7 +152,8 @@ namespace WeaponThread
             },
 
             Ammos = new [] {
-                DronePhy
+                DroneEnergy,
+				DroneMag
             },
             //Animations = AdvancedAnimation,
             // Don't edit below this line
