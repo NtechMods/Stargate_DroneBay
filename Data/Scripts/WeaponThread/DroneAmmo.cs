@@ -14,13 +14,13 @@ namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
     {
-        private AmmoDef DroneMag => new AmmoDef
+        private AmmoDef EDrone => new AmmoDef
         {
             AmmoMagazine = "Energy",
-            AmmoRound = "Drone Phy",
-            HybridRound = true, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.01f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 10000f,
+            AmmoRound = "EDrone",
+            HybridRound = false, //AmmoMagazine based weapon with energy cost
+            EnergyCost = 0.07f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            BaseDamage = 7500f,
             Mass = 0.05f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
@@ -299,13 +299,13 @@ namespace WeaponThread
             }, // Don't edit below this line
         };
 		
-		private AmmoDef DroneEnergy => new AmmoDef
+		private AmmoDef DroneMag => new AmmoDef
         {
-            AmmoMagazine = "DroneEnergy",
-            AmmoRound = "DroneEnergy",
-            HybridRound = false, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.07f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 7500f,
+            AmmoMagazine = "DroneMag",
+            AmmoRound = "DroneMag",
+            HybridRound = true, //AmmoMagazine based weapon with energy cost
+            EnergyCost = 0.02f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            BaseDamage = 10000f,
             Mass = 0.05f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,

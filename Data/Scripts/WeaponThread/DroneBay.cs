@@ -152,8 +152,8 @@ namespace WeaponThread
             },
 
             Ammos = new [] {
-                DroneEnergy,
-				DroneMag
+                DroneMag,
+				EDrone
             },
             //Animations = AdvancedAnimation,
             // Don't edit below this line
