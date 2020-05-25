@@ -83,9 +83,9 @@ namespace WeaponThread
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 90f,
+                    Modifier = 0.5f,
                     Type = Bypass,
-                    BypassModifier = -1f,
+                    BypassModifier = 0.5f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
                 Custom = new CustomScalesDef
@@ -189,7 +189,7 @@ namespace WeaponThread
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
 					MaxTargets = 20,
-                    NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
+                    NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
                 Mines = new MinesDef
@@ -368,9 +368,9 @@ namespace WeaponThread
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 90f,
+                    Modifier = 0.5f,
                     Type = Bypass,
-                    BypassModifier = -1f,
+                    BypassModifier = 0.5f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
                 Custom = new CustomScalesDef
@@ -474,7 +474,7 @@ namespace WeaponThread
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
 					MaxTargets = 20,
-                    NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
+                    NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
                 Mines = new MinesDef
