@@ -302,9 +302,9 @@ namespace WeaponThread
 		private AmmoDef DroneMag => new AmmoDef
         {
             AmmoMagazine = "DroneMag",
-            AmmoRound = "DroneMag",
-            HybridRound = true, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.02f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            AmmoRound = "PhyDrone",
+            HybridRound = false, //AmmoMagazine based weapon with energy cost
+            EnergyCost = 0.0002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 10000f,
             Mass = 0.05f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.

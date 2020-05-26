@@ -94,19 +94,19 @@ namespace WeaponThread
                     RateOfFire = 400,
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
-                    TrajectilesPerBarrel = 2, // Number of Trajectiles per barrel per fire event.
+                    TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
                     ReloadTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 4, //heat generated per shot
+                    HeatPerShot = 8, //heat generated per shot
                     MaxHeat = 1000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
                     HeatSinkRate = 10, //amount of heat lost per second
                     DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
-                    ShotsInBurst = 50,
-                    DelayAfterBurst = 240, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    FireFullBurst = true,
-                    GiveUpAfterBurst = true,
+                    ShotsInBurst = 65,
+                    DelayAfterBurst = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    FireFullBurst = false,
+                    GiveUpAfterBurst = false,
                 },
                 Audio = new HardPointAudioDef
                 {
@@ -155,7 +155,7 @@ namespace WeaponThread
                 DroneMag,
 				EDrone
             },
-            //Animations = AdvancedAnimation,
+            Animations = DroneAnimation,
             // Don't edit below this line
         };
     }
