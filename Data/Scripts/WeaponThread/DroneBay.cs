@@ -78,7 +78,7 @@ namespace WeaponThread
                     MinElevation = -80,
                     MaxElevation = 80,
                     FixedOffset = false,
-                    InventorySize = 2.0f,
+                    InventorySize = 0.65f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                 },
                 Other = new OtherDef
@@ -91,14 +91,14 @@ namespace WeaponThread
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 400,
+                    RateOfFire = 240,
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
-                    ReloadTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 360, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 8, //heat generated per shot
+                    HeatPerShot = 6, //heat generated per shot
                     MaxHeat = 1000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
                     HeatSinkRate = 10, //amount of heat lost per second
@@ -123,8 +123,8 @@ namespace WeaponThread
                     Barrel1 = new ParticleDef
                     {
                         Name = "", // Smoke_LargeGunShot
-                        Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
-                        Offset = Vector(x: 0, y: -1, z: 0),
+                        Color = Color(red: 2.5f, green: 2f, blue: 0.6f, alpha: 1),
+                        Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
                             Loop = false,
@@ -137,8 +137,8 @@ namespace WeaponThread
                     Barrel2 = new ParticleDef
                     {
                         Name = "",//Muzzle_Flash_Large
-                        Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
-                        Offset = Vector(x: 0, y: -1, z: 0),
+                        Color = Color(red: 2.5f, green: 2f, blue: 0.6f, alpha: 1),
+                        Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
                             Loop = false,

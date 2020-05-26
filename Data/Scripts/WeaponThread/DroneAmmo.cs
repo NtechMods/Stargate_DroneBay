@@ -303,8 +303,8 @@ namespace WeaponThread
         {
             AmmoMagazine = "DroneMag",
             AmmoRound = "PhyDrone",
-            HybridRound = false, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.0002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            HybridRound = true, //AmmoMagazine based weapon with energy cost
+            EnergyCost = 0.002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 10000f,
             Mass = 0.05f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
@@ -457,9 +457,9 @@ namespace WeaponThread
                 TargetLossDegree = 180f,
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                AccelPerSec = 700f,
-                DesiredSpeed = 700,
-                MaxTrajectory = 7500f,
+                AccelPerSec = 500f,
+                DesiredSpeed = 95,
+                MaxTrajectory = 7500f, 
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
@@ -470,9 +470,9 @@ namespace WeaponThread
                     Inaccuracy = 0.0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 1f, // controls how responsive tracking is.
                     MaxLateralThrust = 1f, // controls how sharp the trajectile may turn
-                    TrackingDelay = 0, // Measured in Shape diameter units traveled.
+                    TrackingDelay = 1, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
+                    OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
 					MaxTargets = 20,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
@@ -495,10 +495,10 @@ namespace WeaponThread
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "ShipWelderArc", //ShipWelderArc
+                        Name = "DroneGlow", //ShipWelderArc
                         ShrinkByDistance = false,
-                        Color = Color(red: 245, green: 200, blue: 66, alpha: 0.52f),
-                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Color = Color(red: 25f, green: 20f, blue: 6f, alpha: 1.0f),
+                        Offset = Vector(x: 0, y: 0, z: -0.4f),
                         Extras = new ParticleOptionDef
                         {
                             Loop = true,
@@ -513,7 +513,7 @@ namespace WeaponThread
                         Name = "",
                         ApplyToShield = true,
                         ShrinkByDistance = false,
-                        Color = Color(red: 10, green: 1, blue: 0, alpha: 1),
+                        Color = Color(red: 10, green: 6, blue: 1, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -558,7 +558,7 @@ namespace WeaponThread
                         Enable = true,
                         Material = "WeaponLaser",
                         DecayTime = 128,
-                        Color = Color(red: 2.45f, green: 2.00f, blue: 0.66f, alpha: 1f),
+                        Color = Color(red: 2.5f, green: 2.0f, blue: 0.6f, alpha: 1f),
                         Back = false,
                         CustomWidth = 0,
                         UseWidthVariance = false,

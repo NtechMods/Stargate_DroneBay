@@ -27,7 +27,7 @@
         <SubtypeId>DroneMag</SubtypeId>
       </Id>
       <DisplayName>Ancient Drone</DisplayName>
-      <Icon>Textures\GUI\Icons\ammo\Drone.dds</Icon>
+      <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
       <Prerequisites>
         <Item Amount="6" TypeId="Ingot" SubtypeId="Platinum" />
 		<Item Amount="4" TypeId="Ingot" SubtypeId="Nickel" />
@@ -36,7 +36,7 @@
 		<Item Amount="4" TypeId="Ingot" SubtypeId="Cobalt" />
 		<Item Amount="5" TypeId="Ingot" SubtypeId="Silicon" />
       </Prerequisites>
-      <Result Amount="10" TypeId="AmmoMagazine" SubtypeId="DroneMag" />
+      <Result Amount="5" TypeId="AmmoMagazine" SubtypeId="DroneMag" />
       <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
     </Blueprint>
    <Blueprint>
@@ -73,17 +73,17 @@
         <TypeId>AmmoMagazine</TypeId>
         <SubtypeId>DroneMag</SubtypeId>
       </Id>
-      <DisplayName>Ancient Drone</DisplayName>
-      <Icon>Textures\GUI\Icons\ammo\Drone.dds</Icon>
+      <DisplayName>65 Ancient Drones</DisplayName>
+      <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
       <Size>
         <X>0.25</X>
         <Y>0.2</Y>
         <Z>0.2</Z>
       </Size>
-      <Mass>1</Mass>
-      <Volume>1</Volume>
+      <Mass>650</Mass>
+      <Volume>650</Volume>
       <Model>Models\Ammo\Drone_Projectile.mwm</Model>
-      <Capacity>1</Capacity>
+      <Capacity>65</Capacity>
       <AmmoDefinitionId Subtype="Energy" />
     </AmmoMagazine>
   </AmmoMagazines>
