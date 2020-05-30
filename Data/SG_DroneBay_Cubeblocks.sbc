@@ -177,7 +177,7 @@
 				<MountPoint Side="Back" StartX="0.02" StartY="0.02" EndX="4.98" EndY="4.97" />
 			</MountPoints>
 			<BuildProgressModels>
-				<Model BuildPercentUpperBound="0.66" File="Models\Cubes\AncientDroneLaunchBay_Constr1.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\AncientDroneLaunchBay_Constr1.mwm" />
 			</BuildProgressModels>
 			<BlockPairName>SGDronePod</BlockPairName>
 			<Description>testing</Description>
