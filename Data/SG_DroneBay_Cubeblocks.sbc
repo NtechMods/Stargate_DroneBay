@@ -166,7 +166,7 @@
 				<Component Subtype="Motor" Count="10" />
 				<Component Subtype="Computer" Count="300" />
 				<Component Subtype="Construction" Count="100" />
-				<Component Subtype="SteelPlate" Count="1300" /> <!-- Armor layer -->
+				<Component Subtype="SteelPlate" Count="2300" /> <!-- Armor layer -->
 			</Components>
 			<CriticalComponent Subtype="Computer" Index="0" />
 			<MountPoints>
