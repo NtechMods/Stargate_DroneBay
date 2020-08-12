@@ -170,7 +170,7 @@ namespace WeaponThread
             {
                 Guidance = Smart,
                 TargetLossDegree = 180f,
-                TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 700f,
                 DesiredSpeed = 700,
@@ -455,7 +455,7 @@ namespace WeaponThread
             {
                 Guidance = Smart,
                 TargetLossDegree = 180f,
-                TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 500f,
                 DesiredSpeed = 95,
@@ -472,7 +472,7 @@ namespace WeaponThread
                     MaxLateralThrust = 1f, // controls how sharp the trajectile may turn
                     TrackingDelay = 1, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
+                    OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
 					MaxTargets = 20,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
