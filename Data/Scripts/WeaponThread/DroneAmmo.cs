@@ -33,7 +33,7 @@ namespace WeaponThread
             },
             ObjectsHit = new ObjectsHitDef
             {
-                MaxObjectsHit = 100000, // 0 = disabled
+                MaxObjectsHit = 1, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
 			Shrapnel = new ShrapnelDef
@@ -169,7 +169,7 @@ namespace WeaponThread
             Trajectory = new TrajectoryDef
             {
                 Guidance = Smart,
-                TargetLossDegree = 180f,
+                TargetLossDegree = 360f,
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 700f,
@@ -179,7 +179,7 @@ namespace WeaponThread
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
-                MaxTrajectoryTime = 120, // How long the weapon must fire before it reaches MaxTrajectory.
+                MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
                 {
                     Inaccuracy = 0.0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
@@ -188,7 +188,7 @@ namespace WeaponThread
                     TrackingDelay = 5, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
-					MaxTargets = 20,
+					MaxTargets = 200,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
@@ -318,7 +318,7 @@ namespace WeaponThread
             },
             ObjectsHit = new ObjectsHitDef
             {
-                MaxObjectsHit = 100000, // 0 = disabled
+                MaxObjectsHit = 1, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
 			Shrapnel = new ShrapnelDef
@@ -454,7 +454,7 @@ namespace WeaponThread
             Trajectory = new TrajectoryDef
             {
                 Guidance = Smart,
-                TargetLossDegree = 180f,
+                TargetLossDegree = 360f,
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 500f,
@@ -473,7 +473,7 @@ namespace WeaponThread
                     TrackingDelay = 1, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
-					MaxTargets = 20,
+					MaxTargets = 200,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
