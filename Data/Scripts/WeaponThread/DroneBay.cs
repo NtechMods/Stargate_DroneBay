@@ -39,17 +39,17 @@ namespace WeaponThread
                 {
                     Offense, Power, Thrust, Utility, Production, Any, // subsystems the gun targets
                 },
-                ClosestFirst = false, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
+                ClosestFirst = true, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 MinimumDiameter = 0, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
                 TopTargets = 10, // 0 = unlimited, max number of top targets to randomize between.
                 TopBlocks = 10, // 0 = unlimited, max number of blocks to randomize between
-                StopTrackingSpeed = 90, // do not track target threats traveling faster than this speed
+                StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
             },
             HardPoint = new HardPointDef
             {
                 WeaponName = "DroneBay", // name of weapon in terminal
-                DeviateShotAngle = 10f,
+                DeviateShotAngle = 5f,
                 AimingTolerance = 10f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -59,7 +59,7 @@ namespace WeaponThread
                     RateOfFire = true,
                     DamageModifier = false,
                     ToggleGuidance = false,
-                    EnableOverload =  false,
+                    EnableOverload =  true,
                 },
                 Ai = new AiDef
                 {
@@ -71,8 +71,8 @@ namespace WeaponThread
                 },
                 HardWare = new HardwareDef
                 {
-                    RotateRate = 0.02f,
-                    ElevateRate = 0.02f,
+                    RotateRate = 0.06f,
+                    ElevateRate = 0.06f,
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
                     MinElevation = -80,
