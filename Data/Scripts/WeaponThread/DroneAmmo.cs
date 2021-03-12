@@ -20,7 +20,7 @@ namespace WeaponThread
             AmmoRound = "EDrone",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.07f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 7500f,
+            BaseDamage = 150000f,
             Mass = 0.05f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
@@ -171,9 +171,9 @@ namespace WeaponThread
                 Guidance = Smart,
                 TargetLossDegree = 360f,
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                AccelPerSec = 700f,
-                DesiredSpeed = 700,
+                MaxLifeTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                AccelPerSec = 1000f,
+                DesiredSpeed = 1000,
                 MaxTrajectory = 7500f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
@@ -188,7 +188,7 @@ namespace WeaponThread
                     TrackingDelay = 5, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
-					MaxTargets = 200,
+					MaxTargets = 65,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
@@ -305,7 +305,7 @@ namespace WeaponThread
             AmmoRound = "PhyDrone",
             HybridRound = true, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 10000f,
+            BaseDamage = 200000f,
             Mass = 0.05f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
@@ -351,7 +351,7 @@ namespace WeaponThread
                 Characters = -1f,
                 FallOff = new FallOffDef
                 {
-                    Distance = 1000f, // Distance at which max damage begins falling off.
+                    Distance = 1500f, // Distance at which max damage begins falling off.
                     MinMultipler = 0.45f, // value from 0.0f to 1f where 0.1f would be a min damage of 10% of max damage.
                 },
                 Grids = new GridSizeDef
@@ -457,8 +457,8 @@ namespace WeaponThread
                 TargetLossDegree = 360f,
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                AccelPerSec = 500f,
-                DesiredSpeed = 95,
+                AccelPerSec = 1200f,
+                DesiredSpeed = 1200,
                 MaxTrajectory = 7500f, 
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
@@ -473,7 +473,7 @@ namespace WeaponThread
                     TrackingDelay = 1, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
-					MaxTargets = 200,
+					MaxTargets = 65,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
