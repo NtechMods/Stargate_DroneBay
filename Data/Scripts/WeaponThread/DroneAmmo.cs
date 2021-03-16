@@ -19,7 +19,7 @@ namespace WeaponThread
             AmmoMagazine = "Energy",
             AmmoRound = "EDrone",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.07f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            EnergyCost = 0.002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 150000f,
             Mass = 0.05f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
@@ -304,7 +304,7 @@ namespace WeaponThread
             AmmoMagazine = "DroneMag",
             AmmoRound = "PhyDrone",
             HybridRound = true, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            EnergyCost = 0.0003f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 200000f,
             Mass = 0.05f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
