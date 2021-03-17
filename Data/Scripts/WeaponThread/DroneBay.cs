@@ -109,7 +109,7 @@ namespace WeaponThread
                     ShotsInBurst = 65,
                     DelayAfterBurst = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     FireFullBurst = false,
-                    GiveUpAfterBurst = false,
+                    GiveUpAfterBurst = true,
                 },
                 Audio = new HardPointAudioDef
                 {
