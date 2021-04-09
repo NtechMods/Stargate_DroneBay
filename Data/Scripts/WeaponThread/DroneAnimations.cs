@@ -146,7 +146,7 @@ namespace WeaponThread
                 new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones01"),
-                    BarrelId = "muzzle_missile_001", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -199,7 +199,7 @@ namespace WeaponThread
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones02"),
-                    BarrelId = "muzzle_missile_001", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -252,7 +252,7 @@ namespace WeaponThread
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones03"),
-                    BarrelId = "muzzle_missile_001", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -305,7 +305,7 @@ namespace WeaponThread
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones04"),
-                    BarrelId = "muzzle_missile_001", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -358,7 +358,7 @@ namespace WeaponThread
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones05"),
-                    BarrelId = "muzzle_missile_001", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)

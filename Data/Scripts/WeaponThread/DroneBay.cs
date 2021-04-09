@@ -27,7 +27,7 @@ namespace WeaponThread
                 },
                 Barrels = new []
                 {
-                    "muzzle_missile_001",
+                    "MissileTurretBarrels",
                 },
             },
             Targeting = new TargetingDef
@@ -43,15 +43,15 @@ namespace WeaponThread
                 ClosestFirst = true, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 MinimumDiameter = 0, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
-                TopTargets = 10, // 0 = unlimited, max number of top targets to randomize between.
-                TopBlocks = 10, // 0 = unlimited, max number of blocks to randomize between
+                TopTargets = 0, // 0 = unlimited, max number of top targets to randomize between.
+                TopBlocks = 20, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
             },
             HardPoint = new HardPointDef
             {
                 WeaponName = "DroneBay", // name of weapon in terminal
-                DeviateShotAngle = 5f,
-                AimingTolerance = 10f, // 0 - 180 firing angle
+                DeviateShotAngle = 15f,
+                AimingTolerance = 180f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AddToleranceToTracking = false,
@@ -94,28 +94,28 @@ namespace WeaponThread
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 240,
+                    RateOfFire = 300,
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
-                    ReloadTime = 360, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 12, //heat generated per shot
                     MaxHeat = 1000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
-                    HeatSinkRate = 10, //amount of heat lost per second
+                    HeatSinkRate = 40, //amount of heat lost per second
                     DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
                     ShotsInBurst = 65,
                     DelayAfterBurst = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     FireFullBurst = false,
-                    GiveUpAfterBurst = true,
+                    GiveUpAfterBurst = false,
                 },
                 Audio = new HardPointAudioDef
                 {
-                    PreFiringSound = "",
-                    FiringSound = "DroneBayHum", // subtype name from sbc 
-                    FiringSoundPerShot = false,
+                    PreFiringSound = "DroneTravel",
+                    FiringSound = "DroneFire", // subtype name from sbc 
+                    FiringSoundPerShot = true,
                     ReloadSound = "",
                     NoAmmoSound = "ArcWepShipGatlingNoAmmo",
                     HardPointRotationSound = "",
@@ -156,7 +156,8 @@ namespace WeaponThread
 
             Ammos = new [] {
                 DroneMag,
-				EDrone
+				EDrone,
+                SuperDrones
             },
             Animations = DroneAnimation,
             // Don't edit below this line

@@ -86,6 +86,24 @@
       <Capacity>65</Capacity>
       <AmmoDefinitionId Subtype="Energy" />
     </AmmoMagazine>
+    <AmmoMagazine>
+      <Id>
+        <TypeId>AmmoMagazine</TypeId>
+        <SubtypeId>SuperDroneMag</SubtypeId>
+      </Id>
+      <DisplayName>65 Super Drones</DisplayName>
+      <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
+      <Size>
+        <X>0.25</X>
+        <Y>0.2</Y>
+        <Z>0.2</Z>
+      </Size>
+      <Mass>650</Mass>
+      <Volume>650</Volume>
+      <Model>Models\Ammo\Drone_Projectile.mwm</Model>
+      <Capacity>65</Capacity>
+      <AmmoDefinitionId Subtype="Energy" />
+    </AmmoMagazine>
   </AmmoMagazines>
   <Ammos>
     <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
