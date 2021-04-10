@@ -19,10 +19,10 @@ namespace WeaponThread
             AmmoMagazine = "Energy",
             AmmoRound = "EDrone",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            EnergyCost = 0.02f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 10000f,
             Mass = 0.05f, // in kilograms
-            Health = 100, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
+            Health = 50, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
             HardPointUsable = true, // set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
 
@@ -83,7 +83,7 @@ namespace WeaponThread
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 0.0f,
+                    Modifier = 0.1f,
                     Type = Emp, // Energy, Kinetic, Emp, Bypass
                     BypassModifier = -1f,
                 },
@@ -305,7 +305,7 @@ namespace WeaponThread
             AmmoRound = "PhyDrone",
             HybridRound = true, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.0000000002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 10000f,
+            BaseDamage = 20000f,
             Mass = 0.05f, // in kilograms
             Health = 100, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 1f,
@@ -368,9 +368,9 @@ namespace WeaponThread
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 0.5f,
+                    Modifier = 0.2f,
                     Type = Emp, // Energy, Kinetic, Emp, Bypass
-                    BypassModifier = 0.1f,
+                    BypassModifier = 0.05f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
                 Custom = new CustomScalesDef
@@ -436,7 +436,7 @@ namespace WeaponThread
                 },
                 EwarFields = new EwarFieldsDef
                 {
-                    Duration = 600,
+                    Duration = 3600,
                     StackDuration = true,
                     Depletable = true,
                     MaxStacks = 1,
