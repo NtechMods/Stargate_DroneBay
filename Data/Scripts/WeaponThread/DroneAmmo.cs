@@ -83,7 +83,7 @@ namespace WeaponThread
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 0.1f,
+                    Modifier = 0.01f,
                     Type = Emp, // Energy, Kinetic, Emp, Bypass
                     BypassModifier = -1f,
                 },
@@ -188,7 +188,7 @@ namespace WeaponThread
                     TrackingDelay = 50, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-					MaxTargets = 200,
+					MaxTargets = 20,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },

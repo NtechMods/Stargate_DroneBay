@@ -34,7 +34,7 @@
       <MaxDistance>200</MaxDistance>
       <PitchVariation>50</PitchVariation>
       <VolumeVariation>0.2</VolumeVariation>
-      <Volume>0.8</Volume>
+      <Volume>0.6</Volume>
 	  <Loopable>false</Loopable>
       <Waves>
         <Wave Type="D2">

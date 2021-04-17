@@ -6,7 +6,7 @@
       <ParticleId>3562</ParticleId>
       <Length>1</Length>
       <Preload>0</Preload>
-      <LowRes>false</LowRes>
+      <LowRes>true</LowRes>
       <Loop>true</Loop>
       <DurationMin>1</DurationMin>
       <DurationMax>12</DurationMax>
@@ -37,37 +37,37 @@
                       <Key>
                         <Time>0</Time>
                         <ValueVector4>
-                          <W>2.45</W>
-                          <X>2.20</X>
-                          <Y>0.66</Y>
-                          <Z>10.02</Z>
+                          <X>.245</X>
+                          <Y>.220</Y>
+                          <Z>.066</Z>
+                          <W>10.02</W>
                         </ValueVector4>
                       </Key>
                       <Key>
                         <Time>0.9587156</Time>
                         <ValueVector4>
-                          <W>2.45</W>
-                          <X>2.20</X>
-                          <Y>0.66</Y>
-                          <Z>10.02</Z>
+                          <X>.245</X>
+                          <Y>.220</Y>
+                          <Z>.066</Z>
+                          <W>10.02</W>
                         </ValueVector4>
                       </Key>
                       <Key>
                         <Time>0.9824159</Time>
                         <ValueVector4>
-                          <W>2.45</W>
-                          <X>2.20</X>
-                          <Y>0.66</Y>
-                          <Z>10.02</Z>
+                          <X>.245</X>
+                          <Y>.220</Y>
+                          <Z>.066</Z>
+                          <W>10.02</W>
                         </ValueVector4>
                       </Key>
                       <Key>
                         <Time>1</Time>
                         <ValueVector4>
-                          <W>2.45</W>
-                          <X>2.20</X>
-                          <Y>0.66</Y>
-                          <Z>10.02</Z>
+                          <X>.245</X>
+                          <Y>.220</Y>
+                          <Z>.066</Z>
+                          <W>10.02</W>
                         </ValueVector4>
                       </Key>
                     </Keys>
@@ -209,19 +209,19 @@
                     <Keys>
                       <Key>
                         <Time>0</Time>
-                        <ValueFloat>0.4</ValueFloat>
+                        <ValueFloat>0.8</ValueFloat>
                       </Key>
                       <Key>
                         <Time>0.33</Time>
-                        <ValueFloat>0.4</ValueFloat>
+                        <ValueFloat>0.8</ValueFloat>
                       </Key>
                       <Key>
                         <Time>0.66</Time>
-                        <ValueFloat>0.4</ValueFloat>
+                        <ValueFloat>0.8</ValueFloat>
                       </Key>
                       <Key>
                         <Time>1</Time>
-                        <ValueFloat>0.4</ValueFloat>
+                        <ValueFloat>0.8</ValueFloat>
                       </Key>
                     </Keys>
                   </Value2D>
@@ -325,19 +325,19 @@
                     <Keys>
                       <Key>
                         <Time>0</Time>
-                        <ValueFloat>1</ValueFloat>
+                        <ValueFloat>1.3</ValueFloat>
                       </Key>
                       <Key>
                         <Time>0.33</Time>
-                        <ValueFloat>1</ValueFloat>
+                        <ValueFloat>1.3</ValueFloat>
                       </Key>
                       <Key>
                         <Time>0.66</Time>
-                        <ValueFloat>1</ValueFloat>
+                        <ValueFloat>1.3</ValueFloat>
                       </Key>
                       <Key>
                         <Time>1</Time>
-                        <ValueFloat>1</ValueFloat>
+                        <ValueFloat>1.3</ValueFloat>
                       </Key>
                     </Keys>
                   </Value2D>
@@ -358,19 +358,19 @@
                     <Keys>
                       <Key>
                         <Time>0</Time>
-                        <ValueFloat>110</ValueFloat>
+                        <ValueFloat>300</ValueFloat>
                       </Key>
                       <Key>
                         <Time>0.33</Time>
-                        <ValueFloat>110</ValueFloat>
+                        <ValueFloat>300</ValueFloat>
                       </Key>
                       <Key>
                         <Time>0.66</Time>
-                        <ValueFloat>110</ValueFloat>
+                        <ValueFloat>300</ValueFloat>
                       </Key>
                       <Key>
                         <Time>1</Time>
-                        <ValueFloat>110</ValueFloat>
+                        <ValueFloat>300</ValueFloat>
                       </Key>
                     </Keys>
                   </Value2D>
