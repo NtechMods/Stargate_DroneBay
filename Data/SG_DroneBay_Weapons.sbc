@@ -1,130 +1,127 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Weapons>
-    <Weapon>
-      <Id>
-        <TypeId>WeaponDefinition</TypeId>
-        <SubtypeId>DroneBay</SubtypeId>
-      </Id>
-      <ProjectileAmmoData RateOfFire="120" ShootSoundName="WepShipGatlingShot" ShotsInBurst="10" />
-      <ReleaseTimeAfterFire>0</ReleaseTimeAfterFire>
-      <DeviateShotAngle>0</DeviateShotAngle>
-      <MuzzleFlashLifeSpan>0</MuzzleFlashLifeSpan>
-      <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
-      <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
-      <AmmoMagazines>
-        <AmmoMagazine Subtype="Energy" />
-        <AmmoMagazine Subtype="DroneMag" />
-      </AmmoMagazines>
-      <ReloadTime>0</ReloadTime>
-    </Weapon>
-  </Weapons>
-  
-  <Blueprints>   
-   <Blueprint>
-      <Id>
-        <TypeId>BlueprintDefinition</TypeId>
-        <SubtypeId>DroneMag</SubtypeId>
-      </Id>
-      <DisplayName>Ancient Drone</DisplayName>
-      <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
-      <Prerequisites>
-        <Item Amount="6" TypeId="Ingot" SubtypeId="Platinum" />
-		<Item Amount="4" TypeId="Ingot" SubtypeId="Nickel" />
-		<Item Amount="1" TypeId="Ingot" SubtypeId="Gold" />
-		<Item Amount="2" TypeId="Ingot" SubtypeId="Silver" />
-		<Item Amount="4" TypeId="Ingot" SubtypeId="Cobalt" />
-		<Item Amount="5" TypeId="Ingot" SubtypeId="Silicon" />
-      </Prerequisites>
-      <Result Amount="5" TypeId="AmmoMagazine" SubtypeId="DroneMag" />
-      <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
-    </Blueprint>
-   <Blueprint>
-      <Id>
-        <TypeId>BlueprintDefinition</TypeId>
-        <SubtypeId>ZPM</SubtypeId>
-      </Id>
-      <DisplayName>Zero Point Module</DisplayName>
-      <Icon>Textures\GUI\Icons\ZPMComponent.dds</Icon>
-      <Prerequisites>
-        <Item Amount="600" TypeId="Ingot" SubtypeId="Platinum" />
-		<Item Amount="400" TypeId="Ingot" SubtypeId="Nickel" />
-		<Item Amount="1000" TypeId="Ingot" SubtypeId="Gold" />
-		<Item Amount="200" TypeId="Ingot" SubtypeId="Silver" />
-		<Item Amount="400" TypeId="Ingot" SubtypeId="Cobalt" />
-		<Item Amount="500" TypeId="Ingot" SubtypeId="Silicon" />
-      </Prerequisites>
-      <Result Amount="1" TypeId="Component" SubtypeId="ZPM" />
-      <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
-    </Blueprint>
-  </Blueprints>
-
-  <BlueprintClassEntries>
-    <Entry Class="Ammo" BlueprintSubtypeId="DroneMag" />
-	<Entry Class="AmmoMagazine" BlueprintSubtypeId="DroneMag" />
-    <Entry Class="Components" BlueprintSubtypeId="DroneMag" />   
-    <Entry Class="Components" BlueprintSubtypeId="ZPM" />   
-    <Entry Class="LargeBlocks" BlueprintSubtypeId="DroneBay" />
-  </BlueprintClassEntries>
-
-  <AmmoMagazines>
-    <AmmoMagazine>
-      <Id>
-        <TypeId>AmmoMagazine</TypeId>
-        <SubtypeId>DroneMag</SubtypeId>
-      </Id>
-      <DisplayName>65 Ancient Drones</DisplayName>
-      <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
-      <Size>
-        <X>0.25</X>
-        <Y>0.2</Y>
-        <Z>0.2</Z>
-      </Size>
-      <Mass>650</Mass>
-      <Volume>650</Volume>
-      <Model>Models\Ammo\Drone_Projectile.mwm</Model>
-      <Capacity>65</Capacity>
-      <AmmoDefinitionId Subtype="Energy" />
-    </AmmoMagazine>
-    <AmmoMagazine>
-      <Id>
-        <TypeId>AmmoMagazine</TypeId>
-        <SubtypeId>SuperDroneMag</SubtypeId>
-      </Id>
-      <DisplayName>65 Super Drones</DisplayName>
-      <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
-      <Size>
-        <X>0.25</X>
-        <Y>0.2</Y>
-        <Z>0.2</Z>
-      </Size>
-      <Mass>650</Mass>
-      <Volume>650</Volume>
-      <Model>Models\Ammo\Drone_Projectile.mwm</Model>
-      <Capacity>65</Capacity>
-      <AmmoDefinitionId Subtype="Energy" />
-    </AmmoMagazine>
-  </AmmoMagazines>
-  <Ammos>
-    <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
-      <Id>
-        <TypeId>AmmoDefinition</TypeId>
-        <SubtypeId>Energy</SubtypeId>
-      </Id>
-      <BasicProperties>
-        <DesiredSpeed>0</DesiredSpeed>
-        <SpeedVariance>0</SpeedVariance>
-        <MaxTrajectory>0</MaxTrajectory>
-        <BackkickForce>0</BackkickForce>
-      </BasicProperties>
-      <ProjectileProperties>
-        <ProjectileHitImpulse>0</ProjectileHitImpulse>
-        <ProjectileMassDamage>0</ProjectileMassDamage>
-        <ProjectileHealthDamage>0</ProjectileHealthDamage>
-        <ProjectileMaterial></ProjectileMaterial>
-        <ProjectileTrailScale>0</ProjectileTrailScale>
-        <ProjectileTrailProbability>0</ProjectileTrailProbability>
-      </ProjectileProperties>
-    </Ammo>
-  </Ammos>
+    <Weapons>
+        <Weapon>
+            <Id>
+                <TypeId>WeaponDefinition</TypeId>
+                <SubtypeId>DroneBay</SubtypeId>
+            </Id>
+            <ProjectileAmmoData RateOfFire="120" ShootSoundName="WepShipGatlingShot" ShotsInBurst="10" />
+            <ReleaseTimeAfterFire>0</ReleaseTimeAfterFire>
+            <DeviateShotAngle>0</DeviateShotAngle>
+            <MuzzleFlashLifeSpan>0</MuzzleFlashLifeSpan>
+            <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
+            <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
+            <AmmoMagazines>
+                <AmmoMagazine Subtype="Energy" />
+                <AmmoMagazine Subtype="DroneMag" />
+            </AmmoMagazines>
+            <ReloadTime>0</ReloadTime>
+        </Weapon>
+    </Weapons>
+    <Blueprints>
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>DroneMag</SubtypeId>
+            </Id>
+            <DisplayName>Ancient Drone</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
+            <Prerequisites>
+                <Item Amount="6" TypeId="Ingot" SubtypeId="Platinum" />
+                <Item Amount="4" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="1" TypeId="Ingot" SubtypeId="Gold" />
+                <Item Amount="2" TypeId="Ingot" SubtypeId="Silver" />
+                <Item Amount="4" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="5" TypeId="Ingot" SubtypeId="Silicon" />
+            </Prerequisites>
+            <Result Amount="5" TypeId="AmmoMagazine" SubtypeId="DroneMag" />
+            <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+        </Blueprint>
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>ZPM</SubtypeId>
+            </Id>
+            <DisplayName>Zero Point Module</DisplayName>
+            <Icon>Textures\GUI\Icons\ZPMComponent.dds</Icon>
+            <Prerequisites>
+                <Item Amount="600" TypeId="Ingot" SubtypeId="Platinum" />
+                <Item Amount="400" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="1000" TypeId="Ingot" SubtypeId="Gold" />
+                <Item Amount="200" TypeId="Ingot" SubtypeId="Silver" />
+                <Item Amount="400" TypeId="Ingot" SubtypeId="Cobalt" />
+                <Item Amount="500" TypeId="Ingot" SubtypeId="Silicon" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="Component" SubtypeId="ZPM" />
+            <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+        </Blueprint>
+    </Blueprints>
+    <BlueprintClassEntries>
+        <Entry Class="Ammo" BlueprintSubtypeId="DroneMag" />
+        <Entry Class="AmmoMagazine" BlueprintSubtypeId="DroneMag" />
+        <Entry Class="Components" BlueprintSubtypeId="DroneMag" />
+        <Entry Class="Components" BlueprintSubtypeId="ZPM" />
+        <Entry Class="LargeBlocks" BlueprintSubtypeId="DroneBay" />
+    </BlueprintClassEntries>
+    <AmmoMagazines>
+        <AmmoMagazine>
+            <Id>
+                <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>DroneMag</SubtypeId>
+            </Id>
+            <DisplayName>65 Ancient Drones</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
+            <Size>
+                <X>0.25</X>
+                <Y>0.2</Y>
+                <Z>0.2</Z>
+            </Size>
+            <Mass>650</Mass>
+            <Volume>650</Volume>
+            <Model>Models\Ammo\Drone_Projectile.mwm</Model>
+            <Capacity>65</Capacity>
+            <AmmoDefinitionId Subtype="Energy" />
+        </AmmoMagazine>
+        <AmmoMagazine>
+            <Id>
+                <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>SuperDroneMag</SubtypeId>
+            </Id>
+            <DisplayName>65 Super Drones</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
+            <Size>
+                <X>0.25</X>
+                <Y>0.2</Y>
+                <Z>0.2</Z>
+            </Size>
+            <Mass>650</Mass>
+            <Volume>650</Volume>
+            <Model>Models\Ammo\Drone_Projectile.mwm</Model>
+            <Capacity>65</Capacity>
+            <AmmoDefinitionId Subtype="Energy" />
+        </AmmoMagazine>
+    </AmmoMagazines>
+    <Ammos>
+        <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>Energy</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>0</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>0</MaxTrajectory>
+                <BackkickForce>0</BackkickForce>
+            </BasicProperties>
+            <ProjectileProperties>
+                <ProjectileHitImpulse>0</ProjectileHitImpulse>
+                <ProjectileMassDamage>0</ProjectileMassDamage>
+                <ProjectileHealthDamage>0</ProjectileHealthDamage>
+                <ProjectileMaterial></ProjectileMaterial>
+                <ProjectileTrailScale>0</ProjectileTrailScale>
+                <ProjectileTrailProbability>0</ProjectileTrailProbability>
+            </ProjectileProperties>
+        </Ammo>
+    </Ammos>
 </Definitions>

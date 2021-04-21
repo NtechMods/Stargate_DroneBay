@@ -23,11 +23,15 @@ namespace WeaponThread
                         SubtypeId = "DroneBay",
                         AimPartId = "MissileTurretBarrels",
                         MuzzlePartId = "MissileTurretBarrels",
+                        AzimuthPartId = "MissileTurretBase1",
+                        ElevationPartId = "MissileTurretBarrels", 
+                        DurabilityMod = 1.0f,
+                        IconName = "Plac_empty.dds" 
                     },
                 },
                 Barrels = new []
                 {
-                    "MissileTurretBarrels",
+                    "muzzle_missile_001",
                 },
             },
             Targeting = new TargetingDef
@@ -90,7 +94,7 @@ namespace WeaponThread
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
                     MuzzleCheck = false,
-                    Debug = false,
+                    Debug = true,
                 },
                 Loading = new LoadingDef
                 {

@@ -36,7 +36,7 @@ namespace WeaponThread
                 MaxObjectsHit = 10000, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
-			Shrapnel = new ShrapnelDef
+            Shrapnel = new ShrapnelDef
             {
                 AmmoRound = "",
                 Fragments = 2,
@@ -188,7 +188,7 @@ namespace WeaponThread
                     TrackingDelay = 50, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-					MaxTargets = 20,
+                    MaxTargets = 20,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
@@ -298,8 +298,8 @@ namespace WeaponThread
                 HitPlayShield = true,
             }, // Don't edit below this line
         };
-		
-		private AmmoDef DroneMag => new AmmoDef
+
+        private AmmoDef DroneMag => new AmmoDef
         {
             AmmoMagazine = "DroneMag",
             AmmoRound = "PhyDrone",
@@ -321,7 +321,7 @@ namespace WeaponThread
                 MaxObjectsHit = 10000, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
-			Shrapnel = new ShrapnelDef
+            Shrapnel = new ShrapnelDef
             {
                 AmmoRound = "",
                 Fragments = 2,
@@ -473,7 +473,7 @@ namespace WeaponThread
                     TrackingDelay = 50, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-					MaxTargets = 200,
+                    MaxTargets = 200,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
@@ -583,9 +583,9 @@ namespace WeaponThread
                 HitPlayShield = true,
             }, // Don't edit below this line
         };
-	
 
-// Super Drones, not craftable shield penetration of 100%
+
+        // Super Drones, not craftable shield penetration of 100%
         private AmmoDef SuperDrones => new AmmoDef
         {
             AmmoMagazine = "SuperDroneMag",
@@ -608,7 +608,7 @@ namespace WeaponThread
                 MaxObjectsHit = 10000, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
-			Shrapnel = new ShrapnelDef
+            Shrapnel = new ShrapnelDef
             {
                 AmmoRound = "",
                 Fragments = 2,
@@ -760,7 +760,7 @@ namespace WeaponThread
                     TrackingDelay = 50, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-					MaxTargets = 200,
+                    MaxTargets = 200,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
@@ -782,7 +782,7 @@ namespace WeaponThread
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "DroneGlow", //ShipWelderArc
+                        Name = "DroneGlowEnergy", //ShipWelderArc
                         ShrinkByDistance = true,
                         Color = Color(red: 10, green: 30, blue: 256, alpha: 1.02f),
                         Offset = Vector(x: 0, y: 0, z: 0),
@@ -797,7 +797,7 @@ namespace WeaponThread
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "",
+                        Name = "DroneHitEnergy",
                         ApplyToShield = true,
                         ShrinkByDistance = false,
                         Color = Color(red: 10, green: 3, blue: 0, alpha: 1),
