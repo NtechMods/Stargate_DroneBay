@@ -25,7 +25,7 @@ namespace WeaponThread
                         MuzzlePartId = "MissileTurretBarrels",
                         AzimuthPartId = "MissileTurretBase1",
                         ElevationPartId = "MissileTurretBarrels", 
-                        DurabilityMod = 1.0f,
+                        DurabilityMod = 0.1f,
                         IconName = "Plac_empty.dds" 
                     },
                 },
