@@ -210,7 +210,7 @@ namespace WeaponThread
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "DroneGlow", //ShipWelderArc
+                        Name = "DroneGlowEnergy", //ShipWelderArc
                         ShrinkByDistance = true,
                         Color = Color(red: 245, green: 200, blue: 11, alpha: 1.02f),
                         Offset = Vector(x: 0, y: 0, z: 0),
@@ -495,7 +495,7 @@ namespace WeaponThread
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "DroneGlow", //ShipWelderArc
+                        Name = "DroneGlowPhysical", //ShipWelderArc
                         ShrinkByDistance = true,
                         Color = Color(red: 245, green: 220, blue: 66, alpha: 0.02f),
                         Offset = Vector(x: 0, y: 0, z: 0),
@@ -782,7 +782,7 @@ namespace WeaponThread
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "DroneGlowEnergy", //ShipWelderArc
+                        Name = "DroneGlowSuper", //ShipWelderArc
                         ShrinkByDistance = true,
                         Color = Color(red: 10, green: 30, blue: 256, alpha: 1.02f),
                         Offset = Vector(x: 0, y: 0, z: 0),
