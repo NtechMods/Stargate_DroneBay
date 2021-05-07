@@ -83,7 +83,7 @@ namespace WeaponThread
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 0.01f,
+                    Modifier = 0.1f,
                     Type = Emp, // Energy, Kinetic, Emp, Bypass
                     BypassModifier = -1f,
                 },
@@ -185,10 +185,10 @@ namespace WeaponThread
                     Inaccuracy = 0.8f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 0.2f, // controls how responsive tracking is.
                     MaxLateralThrust = 0.1f, // controls how sharp the trajectile may turn
-                    TrackingDelay = 50, // Measured in Shape diameter units traveled.
+                    TrackingDelay = 20, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-                    MaxTargets = 20,
+                    MaxTargets = 200,
                     NoTargetExpire = true, // Expire without ever having a target at TargetLossTime
                     Roam = true, // Roam current area after target loss
                 },
@@ -219,7 +219,7 @@ namespace WeaponThread
                             Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 12,
+                            MaxDuration = 0,
                             Scale = 1f,
                         },
                     },
@@ -304,7 +304,7 @@ namespace WeaponThread
             AmmoMagazine = "DroneMag",
             AmmoRound = "PhyDrone",
             HybridRound = true, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.0000000002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            EnergyCost = 0.00000002f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 20000f,
             Mass = 0.05f, // in kilograms
             Health = 100, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
@@ -368,8 +368,8 @@ namespace WeaponThread
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 0.2f,
-                    Type = Emp, // Energy, Kinetic, Emp, Bypass
+                    Modifier = 0.3f,
+                    Type = Kinetic, // Energy, Kinetic, Emp, Bypass
                     BypassModifier = 0.05f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
@@ -467,10 +467,10 @@ namespace WeaponThread
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
                 {
-                    Inaccuracy = 0.8f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
-                    Aggressiveness = 0.2f, // controls how responsive tracking is.
+                    Inaccuracy = 0.3f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Aggressiveness = 0.3f, // controls how responsive tracking is.
                     MaxLateralThrust = 0.1f, // controls how sharp the trajectile may turn
-                    TrackingDelay = 50, // Measured in Shape diameter units traveled.
+                    TrackingDelay = 20, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 200,
@@ -656,8 +656,8 @@ namespace WeaponThread
                 Shields = new ShieldDef
                 {
                     Modifier = 1f,
-                    Type = Emp, // Energy, Kinetic, Emp, Bypass
-                    BypassModifier = 1f,
+                    Type = Bypass, // Energy, Kinetic, Emp, Bypass
+                    BypassModifier = 0.8f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
                 Custom = new CustomScalesDef
@@ -754,10 +754,10 @@ namespace WeaponThread
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
                 {
-                    Inaccuracy = 0.8f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
-                    Aggressiveness = 0.2f, // controls how responsive tracking is.
+                    Inaccuracy = 0.4f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Aggressiveness = 0.3f, // controls how responsive tracking is.
                     MaxLateralThrust = 0.1f, // controls how sharp the trajectile may turn
-                    TrackingDelay = 50, // Measured in Shape diameter units traveled.
+                    TrackingDelay = 20, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 3600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 200,
@@ -791,7 +791,7 @@ namespace WeaponThread
                             Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 12,
+                            MaxDuration = 0,
                             Scale = 1f,
                         },
                     },

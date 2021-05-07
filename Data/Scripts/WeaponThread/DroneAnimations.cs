@@ -34,7 +34,7 @@ namespace WeaponThread
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Shield"),
-                    BarrelId = "Any", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBase1", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -99,43 +99,7 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees, rotates around CenterEmpty
                                 },
                             },		
-						[TurnOn] =
-                            new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
-                            {
-								new RelMove
-                                {
-                                    CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
-
-                                    MovementType = Show, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
-                                    EmissiveName = "",//name of defined emissive 
-                                    LinearPoints = new[]{
-                                        Transformation(0f, 0, 0f)
-                                    },
-                                    Rotation = Transformation(0, 360, 0), //degrees
-                                    RotAroundCenter = Transformation(0, 0, 0), //degrees, rotates around CenterEmpty
-                                },
-                                
-                            },
-						[TurnOff] =
-                            new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
-                            {
-								
-                                new RelMove
-                                {
-                                    CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
-
-                                    MovementType = Hide, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
-                                    EmissiveName = "",//name of defined emissive 
-                                    LinearPoints = new[]
-                                    {
-                                        Transformation(0, 0, 0), //linear movement x=L,R y=U,D z=F,B
-                                    },
-                                    Rotation = Transformation(0f, 0, 0f), //degrees
-                                    RotAroundCenter = Transformation(0, 0, 0), //degrees, rotates around CenterEmpty
-                                },
-                            },											
+																
                     }
                 },
 				
@@ -146,7 +110,7 @@ namespace WeaponThread
                 new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones01"),
-                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBase1", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -163,7 +127,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Hide, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 
@@ -181,7 +145,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 600, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Show, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 
@@ -199,7 +163,7 @@ namespace WeaponThread
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones02"),
-                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBase1", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -216,7 +180,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Hide, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 
@@ -234,7 +198,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 300, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Show, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 
@@ -252,7 +216,7 @@ namespace WeaponThread
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones03"),
-                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBase1", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -269,7 +233,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Hide, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 
@@ -287,7 +251,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Show, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 
@@ -305,7 +269,7 @@ namespace WeaponThread
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones04"),
-                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBase1", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -322,7 +286,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Hide, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 
@@ -340,7 +304,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Show, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 
@@ -358,7 +322,7 @@ namespace WeaponThread
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Drones05"),
-                    BarrelId = "MissileTurretBarrels", //only used for firing, use "Any" for all muzzles
+                    BarrelId = "MissileTurretBase1", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
                     AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 60, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(), // (Firing, Overheated)
@@ -375,7 +339,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Hide, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 
@@ -393,7 +357,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",//Specifiy an empty on the subpart to rotate around
-                                    TicksToMove = 120, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
 
                                     MovementType = Show, // ExpoGrowth (speedsup),  ExpoDecay (slows down), Linear, Delay, Show, Hide
                                     EmissiveName = "",//name of defined emissive 

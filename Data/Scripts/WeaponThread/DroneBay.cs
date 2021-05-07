@@ -31,7 +31,7 @@ namespace WeaponThread
                 },
                 Barrels = new []
                 {
-                    "muzzle_missile_001",
+                    "MissileTurretBase1", //muzzle_missile_001
                 },
             },
             Targeting = new TargetingDef
@@ -64,7 +64,7 @@ namespace WeaponThread
                 Ui = new UiDef
                 {
                     RateOfFire = true,
-                    DamageModifier = false,
+                    DamageModifier = true,
                     ToggleGuidance = false,
                     EnableOverload =  true,
                 },
@@ -94,25 +94,25 @@ namespace WeaponThread
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
                     MuzzleCheck = false,
-                    Debug = true,
+                    Debug = false,
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 300,
+                    RateOfFire = 600,
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
-                    ReloadTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 30, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 12, //heat generated per shot
+                    HeatPerShot = 2, //heat generated per shot
                     MaxHeat = 1000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
-                    HeatSinkRate = 40, //amount of heat lost per second
+                    HeatSinkRate = 30, //amount of heat lost per second
                     DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
-                    ShotsInBurst = 65,
-                    DelayAfterBurst = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    FireFullBurst = false,
+                    ShotsInBurst = 8,
+                    DelayAfterBurst = 30, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    FireFullBurst = true,
                     GiveUpAfterBurst = false,
                 },
                 Audio = new HardPointAudioDef

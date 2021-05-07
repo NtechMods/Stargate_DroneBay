@@ -98,7 +98,7 @@
             <Mass>650</Mass>
             <Volume>650</Volume>
             <Model>Models\Ammo\Drone_Projectile.mwm</Model>
-            <Capacity>65</Capacity>
+            <Capacity>64</Capacity>
             <AmmoDefinitionId Subtype="Energy" />
         </AmmoMagazine>
     </AmmoMagazines>
