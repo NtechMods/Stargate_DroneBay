@@ -120,14 +120,14 @@
             <DisplayName>DisplayName_BlockGroup_DroneBay</DisplayName>
             <Description>This module can fire 400 drones every minute, Very devastating platform, uses both energy based drones, and physical drones which can be made in the assembler.</Description>
             <Blocks>
-                <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="DroneBay" />
+                <Block Type="MyObjectBuilder_ConveyorSorter" Subtype="DroneBay" />
             </Blocks>
         </BlockVariantGroup>
     </BlockVariantGroups>
     <!-- Research -->
     <ResearchBlocks>
         <ResearchBlock xsi:type="ResearchBlock">
-            <Id Type="MyObjectBuilder_LargeMissileTurret" Subtype="DroneBay" />
+            <Id Type="MyObjectBuilder_ConveyorSorter" Subtype="DroneBay" />
             <UnlockedByGroups>
                 <GroupSubtype>13</GroupSubtype>
             </UnlockedByGroups>
@@ -135,9 +135,9 @@
     </ResearchBlocks>
     <!-- Block Definitions -->
     <CubeBlocks>
-        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+        <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>DroneBay</SubtypeId>
             </Id>
             <DisplayName>Drone Launcher Bay</DisplayName>
@@ -170,7 +170,7 @@
                 <MountPoint Side="Back" StartX="0.02" StartY="0.02" EndX="4.98" EndY="4.97" />
             </MountPoints>
             <BuildProgressModels>
-                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\AncientDroneLaunchBay_Constr1.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\AncientDroneLaunchBay_BS1.mwm" />
             </BuildProgressModels>
             <BlockPairName>SGDronePod</BlockPairName>
             <Description>testing</Description>

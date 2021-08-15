@@ -21,17 +21,17 @@ namespace WeaponThread
                     new MountPointDef
                     {
                         SubtypeId = "DroneBay",
-                        AimPartId = "MissileTurretBarrels",
-                        MuzzlePartId = "MissileTurretBarrels",
-                        AzimuthPartId = "MissileTurretBase1",
-                        ElevationPartId = "MissileTurretBarrels", 
+                        AimPartId = "DroneEle",
+                        MuzzlePartId = "DroneEle",
+                        AzimuthPartId = "DroneAzi",
+                        ElevationPartId = "DroneEle", 
                         DurabilityMod = 0.1f,
                         IconName = "Plac_empty.dds" 
                     },
                 },
                 Barrels = new []
                 {
-                    "MissileTurretBase1", //muzzle_missile_001
+                    "muzzle_missile_001", //muzzle_missile_001
                 },
             },
             Targeting = new TargetingDef
