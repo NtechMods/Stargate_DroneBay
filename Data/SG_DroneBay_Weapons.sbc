@@ -70,7 +70,7 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>DroneMag</SubtypeId>
             </Id>
-            <DisplayName>65 Ancient Drones</DisplayName>
+            <DisplayName>Ancient Drones</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
             <Size>
                 <X>0.25</X>
@@ -80,7 +80,7 @@
             <Mass>650</Mass>
             <Volume>650</Volume>
             <Model>Models\Ammo\Drone_Projectile.mwm</Model>
-            <Capacity>65</Capacity>
+            <Capacity>16</Capacity>
             <AmmoDefinitionId Subtype="Energy" />
         </AmmoMagazine>
         <AmmoMagazine>
@@ -88,7 +88,7 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>SuperDroneMag</SubtypeId>
             </Id>
-            <DisplayName>65 Super Drones</DisplayName>
+            <DisplayName>Super Drones</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\DroneMag.dds</Icon>
             <Size>
                 <X>0.25</X>
@@ -98,7 +98,7 @@
             <Mass>650</Mass>
             <Volume>650</Volume>
             <Model>Models\Ammo\Drone_Projectile.mwm</Model>
-            <Capacity>64</Capacity>
+            <Capacity>16</Capacity>
             <AmmoDefinitionId Subtype="Energy" />
         </AmmoMagazine>
     </AmmoMagazines>

@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using static WeaponThread.WeaponStructure;
-using static WeaponThread.WeaponStructure.WeaponDefinition;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove.MoveType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove;
-namespace WeaponThread
+using static Scripts.Structure.WeaponDefinition;
+using static Scripts.Structure.WeaponDefinition.AnimationDef;
+using static Scripts.Structure.WeaponDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
+using static Scripts.Structure.WeaponDefinition.AnimationDef.RelMove.MoveType;
+using static Scripts.Structure.WeaponDefinition.AnimationDef.RelMove;
+namespace Scripts
 { // Don't edit above this line
-    partial class Weapons
+    partial class Parts
     {
         private AnimationDef DroneAnimation => new AnimationDef
         {
@@ -29,7 +28,7 @@ namespace WeaponThread
                         "Emissive4"
                     }),
             },
-            WeaponAnimationSets = new[]
+            AnimationSets = new[]
             {
 				new PartAnimationSetDef()
                 {
