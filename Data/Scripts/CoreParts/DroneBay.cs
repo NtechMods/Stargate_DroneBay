@@ -83,6 +83,7 @@ namespace Scripts
                     LockOnFocus = true, // Whether this weapon should automatically fire at a target that has been locked onto via HUD.
                     SuppressFire = false, // If enabled, weapon can only be fired manually.
                     OverrideLeads = true, // Disable target leading on fixed weapons, or allow it for turrets.
+                    DefaultLeadGroup = 0, // Default LeadGroup setting, range 0-5, 0 is disables lead group.  Only useful for fixed weapons or weapons set to OverrideLeads.
                 },
                 HardWare = new HardwareDef
                 {
@@ -141,6 +142,8 @@ namespace Scripts
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
                     SpinFree = false, // Spin barrel while not firing.
                     StayCharged = false, // Will start recharging whenever power cap is not full.
+                    MaxActiveProjectiles = 50, // Maximum number of drones in flight (only works for drone launchers)
+                    MaxReloads = 0, // Maximum number of reloads in the LIFETIME of a weapon
                 },
                 Audio = new HardPointAudioDef
                 {
@@ -159,11 +162,14 @@ namespace Scripts
                     {
                         Name = "", // Smoke_LargeGunShot
                         Color = Color(red: 2.5f, green: 2f, blue: 0.6f, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Offset = Vector(x: 0, y: 0, z: 0), // Offsets the effect from the muzzle empty.
+                        DisableCameraCulling = false, // If not true will not cull when not in view of camera, be careful with this and only use if you know you need it
                         Extras = new ParticleOptionDef
                         {
                             Loop = false,
-                            Restart = false,
+                            Restart = false, // Whether to end a looping effect instantly when firing stops.
+                            MaxDistance = 800,
+                            MaxDuration = 0,
                             Scale = 1.0f,
                         },
                     },
@@ -171,11 +177,14 @@ namespace Scripts
                     {
                         Name = "",//Muzzle_Flash_Large
                         Color = Color(red: 2.5f, green: 2f, blue: 0.6f, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Offset = Vector(x: 0, y: 0, z: 0), // Offsets the effect from the muzzle empty.
+                        DisableCameraCulling = false, // If not true will not cull when not in view of camera, be careful with this and only use if you know you need it
                         Extras = new ParticleOptionDef
                         {
                             Loop = false,
-                            Restart = false,
+                            Restart = false, // Whether to end a looping effect instantly when firing stops.
+                            MaxDistance = 800,
+                            MaxDuration = 0,
                             Scale = 1f,
                         },
                     },
