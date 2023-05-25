@@ -60,8 +60,8 @@ namespace Scripts
             HardPoint = new HardPointDef
             {
                 PartName = "DroneBay", // name of weapon in terminal
-                DeviateShotAngle = 15f,
-                AimingTolerance = 6f, // 0 - 180 firing angle
+                DeviateShotAngle = 10f,
+                AimingTolerance = 180f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AddToleranceToTracking = false,
@@ -91,8 +91,8 @@ namespace Scripts
                     ElevateRate = 0.06f,
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
-                    MinElevation = -80,
-                    MaxElevation = 80,
+                    MinElevation = -85,
+                    MaxElevation = 85,
                     HomeAzimuth = 0, // Default resting rotation angle
                     HomeElevation = 0, // Default resting elevation
                     FixedOffset = false,
@@ -102,7 +102,7 @@ namespace Scripts
                     Type = BlockWeapon, // BlockWeapon, HandWeapon, Phantom 
                     CriticalReaction = new CriticalDef
                     {
-                        Enable = false, // Enables Warhead behaviour
+                        Enable = true, // Enables Warhead behaviour
                         DefaultArmedTimer = 120,
                         PreArmed = true,
                         TerminalControls = true,
@@ -116,7 +116,7 @@ namespace Scripts
                     EnergyPriority = 0,
                     MuzzleCheck = false,
                     Debug = false,
-                    RestrictionRadius = 0, // Meters, radius of sphere disable this gun if another is present
+                    RestrictionRadius = 10, // Meters, radius of sphere disable this gun if another is present
                     CheckInflatedBox = false, // if true, the bounding box of the gun is expanded by the RestrictionRadius
                     CheckForAnyWeapon = false, // if true, the check will fail if ANY gun is present, false only looks for this subtype
                 },
