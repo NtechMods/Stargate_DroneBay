@@ -13,7 +13,7 @@
             <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
             <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
             <AmmoMagazines>
-                <AmmoMagazine Subtype="Energy" />
+                <AmmoMagazine Subtype="SuperDroneMag" />
                 <AmmoMagazine Subtype="DroneMag" />
             </AmmoMagazines>
             <ReloadTime>0</ReloadTime>
@@ -41,9 +41,9 @@
         <Blueprint>
             <Id>
                 <TypeId>BlueprintDefinition</TypeId>
-                <SubtypeId>ZPM</SubtypeId>
+                <SubtypeId>ZPM_NT</SubtypeId>
             </Id>
-            <DisplayName>Zero Point Module</DisplayName>
+            <DisplayName>ZPM for Drone Bay</DisplayName>
             <Icon>Textures\GUI\Icons\ZPMComponent.dds</Icon>
             <Prerequisites>
                 <Item Amount="600" TypeId="Ingot" SubtypeId="Platinum" />
@@ -53,7 +53,7 @@
                 <Item Amount="400" TypeId="Ingot" SubtypeId="Cobalt" />
                 <Item Amount="500" TypeId="Ingot" SubtypeId="Silicon" />
             </Prerequisites>
-            <Result Amount="1" TypeId="Component" SubtypeId="ZPM" />
+            <Result Amount="1" TypeId="Component" SubtypeId="ZPM_NT" />
             <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
         </Blueprint>
     </Blueprints>
@@ -61,7 +61,7 @@
         <Entry Class="Ammo" BlueprintSubtypeId="DroneMag" />
         <Entry Class="AmmoMagazine" BlueprintSubtypeId="DroneMag" />
         <Entry Class="Components" BlueprintSubtypeId="DroneMag" />
-        <Entry Class="Components" BlueprintSubtypeId="ZPM" />
+        <Entry Class="Components" BlueprintSubtypeId="ZPM_NT" />
         <Entry Class="LargeBlocks" BlueprintSubtypeId="DroneBay" />
     </BlueprintClassEntries>
     <AmmoMagazines>

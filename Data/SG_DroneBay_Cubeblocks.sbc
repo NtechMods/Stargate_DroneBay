@@ -91,9 +91,9 @@
         <Component>
             <Id>
                 <TypeId>Component</TypeId>
-                <SubtypeId>ZPM</SubtypeId>
+                <SubtypeId>ZPM_NT</SubtypeId>
             </Id>
-            <DisplayName>Zero Point Module</DisplayName>
+            <DisplayName>ZPM for Drone Bay</DisplayName>
             <Icon>Textures\GUI\Icons\ZPMComponent.dds</Icon>
             <Size>
                 <X>0.1</X>
@@ -153,7 +153,7 @@
             <Components>
                 <Component Subtype="SteelPlate" Count="300" />
                 <Component Subtype="Construction" Count="150" />
-                <Component Subtype="ZPM" Count="1" />
+                <Component Subtype="ZPM_NT" Count="1" />
                 <Component Subtype="MetalGrid" Count="40" />
                 <Component Subtype="Motor" Count="10" />
                 <Component Subtype="Computer" Count="300" />
@@ -207,9 +207,4 @@
             </Position>
         </BlockPosition>
     </BlockPositions>
-    <BlueprintClassEntries>
-        <Entry Class="LargeBlocks" BlueprintSubtypeId="DroneLaunchBay" />
-        <Entry Class="Component" BlueprintSubtypeId="ZPM" />
-        <Entry Class="Ammo" BlueprintSubtypeId="DroneMag" />
-    </BlueprintClassEntries>
 </Definitions>
