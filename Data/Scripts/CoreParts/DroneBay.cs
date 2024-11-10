@@ -91,18 +91,18 @@ namespace Scripts
                     ElevateRate = 0.06f,
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
-                    MinElevation = -85,
-                    MaxElevation = 85,
+                    MinElevation = -45,
+                    MaxElevation = 45,
                     HomeAzimuth = 0, // Default resting rotation angle
                     HomeElevation = 0, // Default resting elevation
                     FixedOffset = false,
-                    IdlePower = 0.25f, // Constant base power draw in MW.
+                    IdlePower = 0.15f, // Constant base power draw in MW.
                     InventorySize = 1.4f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                     Type = BlockWeapon, // BlockWeapon, HandWeapon, Phantom 
                     CriticalReaction = new CriticalDef
                     {
-                        Enable = true, // Enables Warhead behaviour
+                        Enable = false, // Enables Warhead behaviour
                         DefaultArmedTimer = 120,
                         PreArmed = true,
                         TerminalControls = true,
